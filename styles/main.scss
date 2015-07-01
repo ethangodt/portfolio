@@ -1,0 +1,49 @@
+// base partials
+@import "reset";
+@import "fonts";
+
+// base colors
+$textGrey: #333131;
+$splashGreen: #92f19d;
+
+// base variables
+$largeBreakRule: "min-width: 769px";
+$medBreakRule: "max-width: 768px";
+$smallBreakRule: "max-width: 485px";
+
+// base styles
+body {
+	background-color: black;
+}
+
+h1, h2, h3, h4, h5 h6 {
+	font-family: 'nerissemibold', sans-serif;
+	letter-spacing: 3px;
+	-webkit-font-smoothing: antialiased;
+}
+
+p {
+	font-family: 'ubuntulight', sans-serif;
+	-webkit-font-smoothing: antialiased;
+	color: $textGrey;
+	line-height: 180%;
+	font-size: .91em;
+}
+
+a {
+	text-decoration: none;
+}
+
+// main mixinz
+@mixin transform($transforms) {
+	-moz-transform: $transforms;
+	-o-transform: $transforms;
+	-ms-transform: $transforms;
+	-webkit-transform: $transforms;
+	transform: $transforms;
+}
+
+// main section partials
+@import "cards";
+@import "nav";
+@import "content";

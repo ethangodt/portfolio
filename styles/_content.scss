@@ -1,0 +1,86 @@
+// BREAKPOINT DEPENDENT STYLES AT BOTTOM
+.main-wrapper {
+	position: relative;
+	padding: 175px 3% 0 3%;
+	overflow: auto;
+
+	.titleContainer {
+		z-index: -100;
+		top: 70px;
+		position: fixed;
+
+		h2 {
+			font-size: 3em;
+			color: white;
+			letter-spacing: 9px;
+		}
+	}
+
+	p {
+		padding: 9%;
+	}
+}
+
+.main-wrapper::before {
+	content: '';
+	background: url("../images/cloud-bg.jpg") no-repeat;
+	background-size: cover;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	z-index: -110;
+	position: fixed;
+	margin-left: -3%; // to compensate for main-wrapper padding
+	will-change: transform;
+	@include transform(translateZ(0)); // for browsers that don't support will-change
+}
+
+.sectionContainer {
+	transition: opacity 500ms ease;
+	display: none; // init - changed immediately on load in SectionManager
+	opacity: 1;
+}
+
+.inactive {
+	opacity: 0;
+}
+
+// BREAKPOINT DEPENDENT STYLES
+// large
+@media ($largeBreakRule)  {
+	.main-wrapper {
+		margin-left: 275px;
+	}
+}
+
+// medium
+@media ($medBreakRule)  {
+	.main-wrapper {
+		margin-left: 150px;
+	}
+}
+
+// small
+@media ($smallBreakRule)  {
+	.main-wrapper {
+		margin-top: 55px;
+		margin-left: 0;
+
+		.titleContainer {
+			top: 140px;
+
+			h2 {
+				font-size: 3em;
+				color: white;
+				letter-spacing: 9px;
+				position: fixed;
+				//text-shadow: 0 1px 7px #aeabab;
+			}
+		}
+	}
+
+	//todo consider changing the way this works with body bgc black
+	.main-wrapper::before {
+		opacity: .6;
+	}
+}
