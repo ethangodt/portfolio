@@ -20,7 +20,7 @@
     });
 
 
-    // setup transition class on smallest mobile breakpoint
+    // setup css transition class on smallest mobile breakpoint
     if (window.innerWidth <= 485) {
         buttonContainer.classList.add("mobileMenuTransition");
     }

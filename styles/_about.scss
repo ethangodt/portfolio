@@ -1,0 +1,135 @@
+#aboutSection {
+	h3 {
+		padding: 9% 9% 30px 9%;
+		line-height: 180%;
+		letter-spacing: 0;
+		font-size: 1.5em;
+		font-family: 'ubuntulight', sans-serif;
+	}
+
+	h3 + p {
+		padding-top: 0;
+	}
+
+	.skillsContainer {
+		padding: 60px 0 120px 0;
+		text-align: center;
+		background: url("../images/script-bg.jpg");
+
+		h3 {
+			padding: 0;
+			font-family: 'nerissemibold', sans-serif;
+		}
+
+		.iconContainer {
+			margin-top: 20px;
+			display: flex;
+			flex-flow: row wrap;
+			padding: 0 9% 0 9%;
+			justify-content: center;
+
+			.icon {
+				transition: all 300ms ease;
+				position: relative;
+				height: 140px;
+				width: 140px;
+				background-color: white;
+				margin: 0 4px 8px 4px;
+			}
+
+			.icon:hover {
+				margin-top: -5px;
+				margin-bottom: 3px;
+				height: 150px;
+				width: 150px;
+			}
+
+			img	{
+				height: 70%;
+				position: absolute;
+				top: 50%;
+				margin-top: -35%;
+				left: 50%;
+				margin-left: -35%;
+			}
+		}
+	}
+
+	.adobeCert {
+		height: 75px;
+		padding: 45px 20px;
+		background-color: #262626;
+
+		.container {
+			max-width: 500px;
+			display: block;
+			margin: 0 auto;
+			padding: 0 15px;
+		}
+
+		p {
+			float: left;
+			color: white;
+			margin-top: 20px;
+			font-size: 1.2em;
+			padding: 0;
+
+			span {
+				color: #9f95ff;
+			}
+		}
+
+		img {
+			float: right;
+			width: 70px;
+		}
+	}
+
+	.connectLink {
+		text-align: center;
+		overflow: auto;
+
+		// todo fix this messiness
+		a {
+			display: inline-block;
+			transition: color 350ms;
+			padding: 0;
+			margin: 20px 0 20px 0;
+			text-decoration: none;
+			font-family: 'ubuntulight', sans-serif;
+			color: $textGrey;
+			line-height: 180%;
+			font-size: .91em;
+		}
+
+		a:hover {
+			color: #d1d1d1;
+		}
+	}
+}
+
+@media ($medBreakRule) {
+	#aboutSection {
+		h3 {
+			font-size: 1.3em;
+		}
+
+		.adobeCert .container {
+			text-align: center;
+
+			p {
+				float: none;
+			}
+
+			img {
+				display: none;
+			}
+		}
+	}
+}
+
+@media ($smallBreakRule) {
+	#aboutSection h3 {
+		font-size: 1.1em;
+	}
+}

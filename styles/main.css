@@ -126,18 +126,18 @@ a {
     left: 275px; }
 
   .cardMid {
-    -moz-transform: perspective(7000px) translate3d(0, 0, -200px);
-    -o-transform: perspective(7000px) translate3d(0, 0, -200px);
-    -ms-transform: perspective(7000px) translate3d(0, 0, -200px);
-    -webkit-transform: perspective(7000px) translate3d(0, 0, -200px);
-    transform: perspective(7000px) translate3d(0, 0, -200px); }
+    -moz-transform: perspective(7000px) translate3d(0, -40px, -200px);
+    -o-transform: perspective(7000px) translate3d(0, -40px, -200px);
+    -ms-transform: perspective(7000px) translate3d(0, -40px, -200px);
+    -webkit-transform: perspective(7000px) translate3d(0, -40px, -200px);
+    transform: perspective(7000px) translate3d(0, -40px, -200px); }
 
   .cardBack {
-    -moz-transform: perspective(7000px) translate3d(0, 0, -400px);
-    -o-transform: perspective(7000px) translate3d(0, 0, -400px);
-    -ms-transform: perspective(7000px) translate3d(0, 0, -400px);
-    -webkit-transform: perspective(7000px) translate3d(0, 0, -400px);
-    transform: perspective(7000px) translate3d(0, 0, -400px); } }
+    -moz-transform: perspective(7000px) translate3d(0, -80px, -400px);
+    -o-transform: perspective(7000px) translate3d(0, -80px, -400px);
+    -ms-transform: perspective(7000px) translate3d(0, -80px, -400px);
+    -webkit-transform: perspective(7000px) translate3d(0, -80px, -400px);
+    transform: perspective(7000px) translate3d(0, -80px, -400px); } }
 @media (max-width: 768px) {
   .cardWrapper, .cardWrapperMid, .cardWrapperBack {
     left: 150px; }
@@ -342,5 +342,117 @@ nav {
 
   .main-wrapper::before {
     opacity: .6; } }
+#aboutSection h3 {
+  padding: 9% 9% 30px 9%;
+  line-height: 180%;
+  letter-spacing: 0;
+  font-size: 1.5em;
+  font-family: 'ubuntulight', sans-serif; }
+#aboutSection h3 + p {
+  padding-top: 0; }
+#aboutSection .skillsContainer {
+  padding: 60px 0 120px 0;
+  text-align: center;
+  background: url("../images/script-bg.jpg"); }
+  #aboutSection .skillsContainer h3 {
+    padding: 0;
+    font-family: 'nerissemibold', sans-serif; }
+  #aboutSection .skillsContainer .iconContainer {
+    margin-top: 20px;
+    display: flex;
+    flex-flow: row wrap;
+    padding: 0 9% 0 9%;
+    justify-content: center; }
+    #aboutSection .skillsContainer .iconContainer .icon {
+      transition: all 300ms ease;
+      position: relative;
+      height: 140px;
+      width: 140px;
+      background-color: white;
+      margin: 0 4px 8px 4px; }
+    #aboutSection .skillsContainer .iconContainer .icon:hover {
+      margin-top: -5px;
+      margin-bottom: 3px;
+      height: 150px;
+      width: 150px; }
+    #aboutSection .skillsContainer .iconContainer img {
+      height: 70%;
+      position: absolute;
+      top: 50%;
+      margin-top: -35%;
+      left: 50%;
+      margin-left: -35%; }
+#aboutSection .adobeCert {
+  height: 75px;
+  padding: 45px 20px;
+  background-color: #262626; }
+  #aboutSection .adobeCert .container {
+    max-width: 500px;
+    display: block;
+    margin: 0 auto;
+    padding: 0 15px; }
+  #aboutSection .adobeCert p {
+    float: left;
+    color: white;
+    margin-top: 20px;
+    font-size: 1.2em;
+    padding: 0; }
+    #aboutSection .adobeCert p span {
+      color: #9f95ff; }
+  #aboutSection .adobeCert img {
+    float: right;
+    width: 70px; }
+#aboutSection .connectLink {
+  text-align: center;
+  overflow: auto; }
+  #aboutSection .connectLink a {
+    display: inline-block;
+    transition: color 350ms;
+    padding: 0;
+    margin: 20px 0 20px 0;
+    text-decoration: none;
+    font-family: 'ubuntulight', sans-serif;
+    color: #333131;
+    line-height: 180%;
+    font-size: .91em; }
+  #aboutSection .connectLink a:hover {
+    color: #d1d1d1; }
+
+@media (max-width: 768px) {
+  #aboutSection h3 {
+    font-size: 1.3em; }
+  #aboutSection .adobeCert .container {
+    text-align: center; }
+    #aboutSection .adobeCert .container p {
+      float: none; }
+    #aboutSection .adobeCert .container img {
+      display: none; } }
+@media (max-width: 485px) {
+  #aboutSection h3 {
+    font-size: 1.1em; } }
+#designSection img {
+  width: 100%; }
+#designSection .browserSnapshot {
+  padding: 75px 50px;
+  background-color: #ececec; }
+
+#plantMidwest > div:last-of-type {
+  padding: 9%;
+  background-color: #ececec; }
+
+#plantMidwest .headerImage + p {
+  padding-top: 40px; }
+
+#stcCrossfit .headerImage + p {
+  padding-top: 40px; }
+
+#ekklesiaStl .headerImage + p {
+  padding-top: 40px; }
+
+#devSection img {
+  width: 100%; }
+#devSection .browserSnapshot {
+  padding: 75px 50px;
+  background-color: #ececec; }
 
 /*# sourceMappingURL=main.css.map */

@@ -70,11 +70,11 @@
 	}
 
 	.cardMid {
-		@include transform(perspective(7000px) translate3d(0, 0, -200px));
+		@include transform(perspective(7000px) translate3d(0, -40px, -200px));
 	}
 
 	.cardBack {
-		@include transform(perspective(7000px) translate3d(0, 0, -400px));
+		@include transform(perspective(7000px) translate3d(0, -80px, -400px));
 	}
 }
 

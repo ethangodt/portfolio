@@ -29,6 +29,7 @@ app.Section = function Section (container, content, title, id) {
 
 app.Section.prototype.setMainWrapperHeight = function setMainWrapperHeight () {
 	var pagePaddingTop = 0;
+	console.log(this.mainWrapper);
 	this.mainWrapper.style.height = pagePaddingTop + this.content.getHeight() + "px";
 };
 
@@ -46,8 +47,8 @@ app.Section.prototype.contentIn = function contentIn () {
 	this.active = true;
 	this.sectionWrapper.style.display = "block";
 	this.setMainWrapperHeight();
-	window.scrollTo(0, 1); // todo maybe move this somewhere else
-	window.scrollTo(0, 0); // todo fix this
+	window.scrollTo(0, 1); // todo maybe move this somewhere else and fix the repeat
+	window.scrollTo(0, 0);
 };
 
 app.Section.prototype.animateIn = function animateIn () {

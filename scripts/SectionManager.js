@@ -12,7 +12,7 @@ app.SectionManager = function SectionManager () {
 	this.currentSection = null;
 
 
-	// setup first section
+	// setup about section on load
 	(function init () {
 	    self.currentSection = self.about;
 		self.about.contentIn();
@@ -60,5 +60,3 @@ app.SectionManager.prototype.switchSections = function switchSections (currentSe
 	this.setCurrentSection(newSection);
 	newSection.sectionIn(); // within this function there is a delay wrapping the whole transition
 };
-
-// todo make it so that you're watching for touchscreen devices to remove hoverEnabled class

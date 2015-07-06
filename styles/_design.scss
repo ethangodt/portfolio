@@ -1,0 +1,36 @@
+#designSection {
+	img {
+		width: 100%;
+	}
+
+	.browserSnapshot {
+		padding: 75px 50px;
+		background-color: #ececec;
+	}
+}
+
+// plantMidwest section
+#plantMidwest > div:last-of-type {
+	padding: 9%;
+	background-color: #ececec;
+}
+
+#plantMidwest {
+	.headerImage + p {
+		padding-top: 40px;
+	}
+}
+
+// stcCrossfit section
+#stcCrossfit {
+	.headerImage + p {
+		padding-top: 40px;
+	}
+}
+
+// ekklesiaStl section
+#ekklesiaStl {
+	.headerImage + p {
+		padding-top: 40px;
+	}
+}

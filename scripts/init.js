@@ -3,6 +3,9 @@
  */
 
 (function init () {
+	// sets up main view objects
 	var view = new app.SectionManager();
-	// call the init on view for first time load
+
+	//sets up skrollr for parallax
+	var s = skrollr.init();
 }());
