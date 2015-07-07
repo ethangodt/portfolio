@@ -12,17 +12,18 @@
 .cardWrapperFront {
 	position: static;
 	margin-bottom: 115px;
+	box-shadow: 0 3px 4px rgba(50, 50, 50, .2);
 }
 
 .cardWrapperMid {
 	@extend .cardWrapper;
-	top: -23px;
+	top: -60px;
 	z-index: -10;
 }
 
 .cardWrapperBack {
 	@extend .cardWrapper;
-	top: -45px;
+	top: -115px;
 	z-index: -20;
 }
 
@@ -52,13 +53,11 @@
 
 .cardBack {
 	opacity: .5;
-	-webkit-filter: blur(1.5px);
 }
 
 .unloaded {
 	top: 10px;
 	opacity: 0;
-	//visibility: hidden;
 }
 
 
@@ -70,11 +69,11 @@
 	}
 
 	.cardMid {
-		@include transform(perspective(7000px) translate3d(0, -40px, -200px));
+		@include transform(perspective(7000px) translate3d(0, 0, -200px));
 	}
 
 	.cardBack {
-		@include transform(perspective(7000px) translate3d(0, -80px, -400px));
+		@include transform(perspective(7000px) translate3d(0, 0, -400px));
 	}
 }
 
@@ -86,11 +85,11 @@
 
 	// these are to exagerate the height difference given the weird
 	.cardMid {
-		@include transform(perspective(7000px) translate3d(0, -6px, -200px));
+		@include transform(perspective(7000px) translate3d(0, 10px, -200px));
 	}
 
 	.cardBack {
-		@include transform(perspective(7000px) translate3d(0, -13px, -400px));
+		@include transform(perspective(7000px) translate3d(0, 20px, -400px));
 	}
 }
 
@@ -102,10 +101,10 @@
 	}
 
 	.cardMid {
-		@include transform(perspective(7000px) translate3d(0, -5px, -200px));
+		@include transform(perspective(7000px) translate3d(0, 18px, -200px));
 	}
 
 	.cardBack {
-		@include transform(perspective(7000px) translate3d(0, -15px, -400px));
+		@include transform(perspective(7000px) translate3d(0, 30px, -400px));
 	}
 }

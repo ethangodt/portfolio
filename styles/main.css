@@ -90,14 +90,15 @@ a {
 
 .cardWrapperFront {
   position: static;
-  margin-bottom: 115px; }
+  margin-bottom: 115px;
+  box-shadow: 0 3px 4px rgba(50, 50, 50, 0.2); }
 
 .cardWrapperMid {
-  top: -23px;
+  top: -60px;
   z-index: -10; }
 
 .cardWrapperBack {
-  top: -45px;
+  top: -115px;
   z-index: -20; }
 
 .card {
@@ -114,8 +115,7 @@ a {
   opacity: .7; }
 
 .cardBack {
-  opacity: .5;
-  -webkit-filter: blur(1.5px); }
+  opacity: .5; }
 
 .unloaded {
   top: 10px;
@@ -126,53 +126,53 @@ a {
     left: 275px; }
 
   .cardMid {
-    -moz-transform: perspective(7000px) translate3d(0, -40px, -200px);
-    -o-transform: perspective(7000px) translate3d(0, -40px, -200px);
-    -ms-transform: perspective(7000px) translate3d(0, -40px, -200px);
-    -webkit-transform: perspective(7000px) translate3d(0, -40px, -200px);
-    transform: perspective(7000px) translate3d(0, -40px, -200px); }
+    -moz-transform: perspective(7000px) translate3d(0, 0, -200px);
+    -o-transform: perspective(7000px) translate3d(0, 0, -200px);
+    -ms-transform: perspective(7000px) translate3d(0, 0, -200px);
+    -webkit-transform: perspective(7000px) translate3d(0, 0, -200px);
+    transform: perspective(7000px) translate3d(0, 0, -200px); }
 
   .cardBack {
-    -moz-transform: perspective(7000px) translate3d(0, -80px, -400px);
-    -o-transform: perspective(7000px) translate3d(0, -80px, -400px);
-    -ms-transform: perspective(7000px) translate3d(0, -80px, -400px);
-    -webkit-transform: perspective(7000px) translate3d(0, -80px, -400px);
-    transform: perspective(7000px) translate3d(0, -80px, -400px); } }
+    -moz-transform: perspective(7000px) translate3d(0, 0, -400px);
+    -o-transform: perspective(7000px) translate3d(0, 0, -400px);
+    -ms-transform: perspective(7000px) translate3d(0, 0, -400px);
+    -webkit-transform: perspective(7000px) translate3d(0, 0, -400px);
+    transform: perspective(7000px) translate3d(0, 0, -400px); } }
 @media (max-width: 768px) {
   .cardWrapper, .cardWrapperMid, .cardWrapperBack {
     left: 150px; }
 
   .cardMid {
-    -moz-transform: perspective(7000px) translate3d(0, -6px, -200px);
-    -o-transform: perspective(7000px) translate3d(0, -6px, -200px);
-    -ms-transform: perspective(7000px) translate3d(0, -6px, -200px);
-    -webkit-transform: perspective(7000px) translate3d(0, -6px, -200px);
-    transform: perspective(7000px) translate3d(0, -6px, -200px); }
+    -moz-transform: perspective(7000px) translate3d(0, 10px, -200px);
+    -o-transform: perspective(7000px) translate3d(0, 10px, -200px);
+    -ms-transform: perspective(7000px) translate3d(0, 10px, -200px);
+    -webkit-transform: perspective(7000px) translate3d(0, 10px, -200px);
+    transform: perspective(7000px) translate3d(0, 10px, -200px); }
 
   .cardBack {
-    -moz-transform: perspective(7000px) translate3d(0, -13px, -400px);
-    -o-transform: perspective(7000px) translate3d(0, -13px, -400px);
-    -ms-transform: perspective(7000px) translate3d(0, -13px, -400px);
-    -webkit-transform: perspective(7000px) translate3d(0, -13px, -400px);
-    transform: perspective(7000px) translate3d(0, -13px, -400px); } }
+    -moz-transform: perspective(7000px) translate3d(0, 20px, -400px);
+    -o-transform: perspective(7000px) translate3d(0, 20px, -400px);
+    -ms-transform: perspective(7000px) translate3d(0, 20px, -400px);
+    -webkit-transform: perspective(7000px) translate3d(0, 20px, -400px);
+    transform: perspective(7000px) translate3d(0, 20px, -400px); } }
 @media (max-width: 485px) {
   .cardWrapper, .cardWrapperMid, .cardWrapperBack {
     left: 0;
     margin-top: 225px; }
 
   .cardMid {
-    -moz-transform: perspective(7000px) translate3d(0, -5px, -200px);
-    -o-transform: perspective(7000px) translate3d(0, -5px, -200px);
-    -ms-transform: perspective(7000px) translate3d(0, -5px, -200px);
-    -webkit-transform: perspective(7000px) translate3d(0, -5px, -200px);
-    transform: perspective(7000px) translate3d(0, -5px, -200px); }
+    -moz-transform: perspective(7000px) translate3d(0, 18px, -200px);
+    -o-transform: perspective(7000px) translate3d(0, 18px, -200px);
+    -ms-transform: perspective(7000px) translate3d(0, 18px, -200px);
+    -webkit-transform: perspective(7000px) translate3d(0, 18px, -200px);
+    transform: perspective(7000px) translate3d(0, 18px, -200px); }
 
   .cardBack {
-    -moz-transform: perspective(7000px) translate3d(0, -15px, -400px);
-    -o-transform: perspective(7000px) translate3d(0, -15px, -400px);
-    -ms-transform: perspective(7000px) translate3d(0, -15px, -400px);
-    -webkit-transform: perspective(7000px) translate3d(0, -15px, -400px);
-    transform: perspective(7000px) translate3d(0, -15px, -400px); } }
+    -moz-transform: perspective(7000px) translate3d(0, 30px, -400px);
+    -o-transform: perspective(7000px) translate3d(0, 30px, -400px);
+    -ms-transform: perspective(7000px) translate3d(0, 30px, -400px);
+    -webkit-transform: perspective(7000px) translate3d(0, 30px, -400px);
+    transform: perspective(7000px) translate3d(0, 30px, -400px); } }
 nav {
   background-color: white;
   text-align: center;
@@ -295,7 +295,11 @@ nav {
       color: white;
       letter-spacing: 9px; }
   .main-wrapper p {
+    padding: 15px 9% 15px 9%; }
+  .main-wrapper p.solo {
     padding: 9%; }
+  .main-wrapper .italic {
+    font-style: italic; }
 
 .main-wrapper::before {
   content: '';
@@ -350,6 +354,8 @@ nav {
   font-family: 'ubuntulight', sans-serif; }
 #aboutSection h3 + p {
   padding-top: 0; }
+#aboutSection p:nth-of-type(3) {
+  padding-bottom: 9%; }
 #aboutSection .skillsContainer {
   padding: 60px 0 120px 0;
   text-align: center;
@@ -359,10 +365,15 @@ nav {
     font-family: 'nerissemibold', sans-serif; }
   #aboutSection .skillsContainer .iconContainer {
     margin-top: 20px;
-    display: flex;
-    flex-flow: row wrap;
     padding: 0 9% 0 9%;
-    justify-content: center; }
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: row;
+    -webkit-flex-direction: row;
+    flex-flow: row wrap;
+    -webkit-flex-flow: row wrap;
+    justify-content: center;
+    -webkit-justify-content: center; }
     #aboutSection .skillsContainer .iconContainer .icon {
       transition: all 300ms ease;
       position: relative;

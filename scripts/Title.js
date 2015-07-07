@@ -40,5 +40,4 @@ app.Title.prototype.animateTitle = function animateTitle (scrollAmt) {
 		this.elem.style.opacity = 0;
 		this.elem.style.transform = "scale(.99)";
 	}
-	// todo also change depth
 };

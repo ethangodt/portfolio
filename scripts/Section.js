@@ -47,7 +47,8 @@ app.Section.prototype.contentIn = function contentIn () {
 	this.active = true;
 	this.sectionWrapper.style.display = "block";
 	this.setMainWrapperHeight();
-	window.scrollTo(0, 1); // todo maybe move this somewhere else and fix the repeat
+
+	// reset scroll position - after elements are set to "display block" this scroll event resets positions and depths of all content
 	window.scrollTo(0, 0);
 };
 

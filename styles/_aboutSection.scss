@@ -11,6 +11,10 @@
 		padding-top: 0;
 	}
 
+	p:nth-of-type(3) {
+		padding-bottom: 9%;
+	}
+
 	.skillsContainer {
 		padding: 60px 0 120px 0;
 		text-align: center;
@@ -23,10 +27,16 @@
 
 		.iconContainer {
 			margin-top: 20px;
-			display: flex;
-			flex-flow: row wrap;
 			padding: 0 9% 0 9%;
+			// flexbox support for firefox, chrome, and safari
+			display: flex;
+			display: -webkit-flex;
+			flex-direction: row;
+			-webkit-flex-direction: row;
+			flex-flow: row wrap;
+			-webkit-flex-flow: row wrap;
 			justify-content: center;
+			-webkit-justify-content: center;
 
 			.icon {
 				transition: all 300ms ease;

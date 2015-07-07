@@ -9,7 +9,6 @@ var app = {};
 
 
 	// check for Safari to avoid terrible transform support
-	// todo remove hoverEnabled on lower breakpoint widths
 	var isSafari = !!navigator.userAgent.match(/Version\/[\d\.]+.*Safari/);
 	if (isSafari || window.innerWidth <= 768) {
 		document.body.classList.remove("hoverEnabled");

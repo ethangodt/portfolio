@@ -17,7 +17,15 @@
 	}
 
 	p {
+		padding: 15px 9% 15px 9%;
+	}
+
+	p.solo {
 		padding: 9%;
+	}
+
+	.italic {
+		font-style: italic;
 	}
 }
 
@@ -79,8 +87,7 @@
 		}
 	}
 
-	//todo consider changing the way this works with body bgc black
 	.main-wrapper::before {
-		opacity: .6;
+		opacity: .6; // this works b/c the body has a black background
 	}
 }

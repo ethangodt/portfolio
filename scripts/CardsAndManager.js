@@ -15,15 +15,14 @@ app.Card.prototype.animateOut = function animateOut () {
     this.elem.classList.add("unloaded");
 };
 
-app.Card.prototype.shiftDepth = function shiftDepth (cardClass, wrapperClass) {
+app.Card.prototype.shiftDepth = function shiftDepth (newCardClass, wrapperClass) {
 	var currentWrapperClass = this.wrapperElem.classList[0],
 		cardClassArr = Array.prototype.slice.call(this.elem.classList),
-		relevantCardClass = cardClassArr.reduce(function (acc, elem) {
+		oldCardClass = cardClassArr.reduce(function (acc, className) { // return only the class name string I'm looking for
 			var re = /(cardFront)|(cardMid)|(cardBack)/;
 
-			// todo this is a little lame
-			if (re.test(elem)) {
-				return elem;
+			if (re.test(className)) {
+				return className;
 			}
 
 		}, null);
@@ -31,8 +30,8 @@ app.Card.prototype.shiftDepth = function shiftDepth (cardClass, wrapperClass) {
 	this.wrapperElem.classList.remove(currentWrapperClass);
 	this.wrapperElem.classList.add(wrapperClass);
 
-	this.elem.classList.remove(relevantCardClass);
-	this.elem.classList.add(cardClass);
+	this.elem.classList.remove(oldCardClass);
+	this.elem.classList.add(newCardClass);
 };
 
 app.Card.prototype.getHeight = function getHeight () {

@@ -43,6 +43,13 @@ a {
 	transform: $transforms;
 }
 
+@mixin filter($transforms) {
+	-o-filter: $transforms;
+	-ms-filter: $transforms;
+	-webkit-filter: $transforms;
+	filter: $transforms;
+}
+
 // main section partials
 @import "cards";
 @import "nav";
