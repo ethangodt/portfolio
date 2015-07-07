@@ -85,11 +85,11 @@
 
 	// these are to exagerate the height difference given the weird
 	.cardMid {
-		@include transform(perspective(7000px) translate3d(0, 10px, -200px));
+		@include transform(perspective(7000px) translate3d(0, -16px, -200px));
 	}
 
 	.cardBack {
-		@include transform(perspective(7000px) translate3d(0, 20px, -400px));
+		@include transform(perspective(7000px) translate3d(0, 36px, -400px));
 	}
 }
 
@@ -101,10 +101,10 @@
 	}
 
 	.cardMid {
-		@include transform(perspective(7000px) translate3d(0, 18px, -200px));
+		@include transform(perspective(7000px) translate3d(0, -12px, -200px));
 	}
 
 	.cardBack {
-		@include transform(perspective(7000px) translate3d(0, 30px, -400px));
+		@include transform(perspective(7000px) translate3d(0, 40px, -400px));
 	}
 }

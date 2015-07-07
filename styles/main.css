@@ -143,36 +143,36 @@ a {
     left: 150px; }
 
   .cardMid {
-    -moz-transform: perspective(7000px) translate3d(0, 10px, -200px);
-    -o-transform: perspective(7000px) translate3d(0, 10px, -200px);
-    -ms-transform: perspective(7000px) translate3d(0, 10px, -200px);
-    -webkit-transform: perspective(7000px) translate3d(0, 10px, -200px);
-    transform: perspective(7000px) translate3d(0, 10px, -200px); }
+    -moz-transform: perspective(7000px) translate3d(0, -16px, -200px);
+    -o-transform: perspective(7000px) translate3d(0, -16px, -200px);
+    -ms-transform: perspective(7000px) translate3d(0, -16px, -200px);
+    -webkit-transform: perspective(7000px) translate3d(0, -16px, -200px);
+    transform: perspective(7000px) translate3d(0, -16px, -200px); }
 
   .cardBack {
-    -moz-transform: perspective(7000px) translate3d(0, 20px, -400px);
-    -o-transform: perspective(7000px) translate3d(0, 20px, -400px);
-    -ms-transform: perspective(7000px) translate3d(0, 20px, -400px);
-    -webkit-transform: perspective(7000px) translate3d(0, 20px, -400px);
-    transform: perspective(7000px) translate3d(0, 20px, -400px); } }
+    -moz-transform: perspective(7000px) translate3d(0, 36px, -400px);
+    -o-transform: perspective(7000px) translate3d(0, 36px, -400px);
+    -ms-transform: perspective(7000px) translate3d(0, 36px, -400px);
+    -webkit-transform: perspective(7000px) translate3d(0, 36px, -400px);
+    transform: perspective(7000px) translate3d(0, 36px, -400px); } }
 @media (max-width: 485px) {
   .cardWrapper, .cardWrapperMid, .cardWrapperBack {
     left: 0;
     margin-top: 225px; }
 
   .cardMid {
-    -moz-transform: perspective(7000px) translate3d(0, 18px, -200px);
-    -o-transform: perspective(7000px) translate3d(0, 18px, -200px);
-    -ms-transform: perspective(7000px) translate3d(0, 18px, -200px);
-    -webkit-transform: perspective(7000px) translate3d(0, 18px, -200px);
-    transform: perspective(7000px) translate3d(0, 18px, -200px); }
+    -moz-transform: perspective(7000px) translate3d(0, -12px, -200px);
+    -o-transform: perspective(7000px) translate3d(0, -12px, -200px);
+    -ms-transform: perspective(7000px) translate3d(0, -12px, -200px);
+    -webkit-transform: perspective(7000px) translate3d(0, -12px, -200px);
+    transform: perspective(7000px) translate3d(0, -12px, -200px); }
 
   .cardBack {
-    -moz-transform: perspective(7000px) translate3d(0, 30px, -400px);
-    -o-transform: perspective(7000px) translate3d(0, 30px, -400px);
-    -ms-transform: perspective(7000px) translate3d(0, 30px, -400px);
-    -webkit-transform: perspective(7000px) translate3d(0, 30px, -400px);
-    transform: perspective(7000px) translate3d(0, 30px, -400px); } }
+    -moz-transform: perspective(7000px) translate3d(0, 40px, -400px);
+    -o-transform: perspective(7000px) translate3d(0, 40px, -400px);
+    -ms-transform: perspective(7000px) translate3d(0, 40px, -400px);
+    -webkit-transform: perspective(7000px) translate3d(0, 40px, -400px);
+    transform: perspective(7000px) translate3d(0, 40px, -400px); } }
 nav {
   background-color: white;
   text-align: center;
