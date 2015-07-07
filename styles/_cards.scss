@@ -17,13 +17,13 @@
 
 .cardWrapperMid {
 	@extend .cardWrapper;
-	top: -60px;
+	top: -15px;
 	z-index: -10;
 }
 
 .cardWrapperBack {
 	@extend .cardWrapper;
-	top: -115px;
+	top: -95px;
 	z-index: -20;
 }
 
@@ -55,7 +55,7 @@
 	opacity: .5;
 }
 
-.unloaded {
+.unloaded { // load transition class
 	top: 10px;
 	opacity: 0;
 }
@@ -69,7 +69,7 @@
 	}
 
 	.cardMid {
-		@include transform(perspective(7000px) translate3d(0, 0, -200px));
+		@include transform(perspective(7000px) translate3d(0, -37px, -200px));
 	}
 
 	.cardBack {

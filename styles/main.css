@@ -94,11 +94,11 @@ a {
   box-shadow: 0 3px 4px rgba(50, 50, 50, 0.2); }
 
 .cardWrapperMid {
-  top: -60px;
+  top: -15px;
   z-index: -10; }
 
 .cardWrapperBack {
-  top: -115px;
+  top: -95px;
   z-index: -20; }
 
 .card {
@@ -126,11 +126,11 @@ a {
     left: 275px; }
 
   .cardMid {
-    -moz-transform: perspective(7000px) translate3d(0, 0, -200px);
-    -o-transform: perspective(7000px) translate3d(0, 0, -200px);
-    -ms-transform: perspective(7000px) translate3d(0, 0, -200px);
-    -webkit-transform: perspective(7000px) translate3d(0, 0, -200px);
-    transform: perspective(7000px) translate3d(0, 0, -200px); }
+    -moz-transform: perspective(7000px) translate3d(0, -37px, -200px);
+    -o-transform: perspective(7000px) translate3d(0, -37px, -200px);
+    -ms-transform: perspective(7000px) translate3d(0, -37px, -200px);
+    -webkit-transform: perspective(7000px) translate3d(0, -37px, -200px);
+    transform: perspective(7000px) translate3d(0, -37px, -200px); }
 
   .cardBack {
     -moz-transform: perspective(7000px) translate3d(0, 0, -400px);
