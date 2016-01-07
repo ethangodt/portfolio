@@ -72,6 +72,11 @@
 		@include transform(perspective(7000px) translate3d(0, -37px, -200px));
 	}
 
+	// temp fix for strange content length issue
+	#devSection .cardMid {
+		@include transform(perspective(7000px) translate3d(0, -15px, -200px));
+	}
+
 	.cardBack {
 		@include transform(perspective(7000px) translate3d(0, 0, -400px));
 	}

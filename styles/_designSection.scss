@@ -4,7 +4,18 @@
 	}
 
 	.browserSnapshot {
-		padding: 75px 50px;
+		padding: 0 50px;
+		background-color: #ececec;
+	}
+
+	.browserSnapshot:first-of-type {
+		padding-top: 9%;
+		background-color: #ececec;
+	}
+
+	.browserSnapshot:last-of-type {
+		padding-top: 30px;
+		padding-bottom: 75px;
 		background-color: #ececec;
 	}
 }
@@ -18,6 +29,12 @@
 #plantMidwest {
 	.headerImage + p {
 		padding-top: 40px;
+	}
+
+	.browserSnapshot:last-of-type {
+		padding-top: 9%;
+		padding-bottom: 75px;
+		background-color: #ececec;
 	}
 }
 
