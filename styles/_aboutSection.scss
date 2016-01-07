@@ -1,18 +1,14 @@
 #aboutSection {
 	h3 {
-		padding: 9% 9% 30px 9%;
+		padding: 9%;
 		line-height: 180%;
 		letter-spacing: 0;
-		font-size: 1.5em;
+		font-size: 1.4em;
 		font-family: 'ubuntulight', sans-serif;
 	}
 
 	h3 + p {
 		padding-top: 0;
-	}
-
-	p:nth-of-type(3) {
-		padding-bottom: 9%;
 	}
 
 	.skillsContainer {
