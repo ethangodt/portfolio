@@ -1,7 +1,3 @@
-/**
- * Created by ethangodt on 7/3/15.
- */
-
 window.addEventListener("load", function () {
 	// this sets up excess space (10px) within the skillsContainer to prevent the
 	// div from growing and shrinking when the skills blocks are hovered

@@ -1,7 +1,3 @@
-/**
- * Created by ethangodt on 6/29/15.
- */
-
 export default function Title (container, id) {
     var self = this;
 

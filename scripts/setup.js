@@ -1,6 +1,3 @@
-/**
- * Created by ethangodt on 6/29/15.
- */
 var app = {};
 
 // executes miscellaneous preliminary tasks

@@ -1,7 +1,3 @@
-/**
- * Created by ethangodt on 6/29/15.
- */
-
 export function Card (cardElem) {
 	this.elem = cardElem;
 	this.wrapperElem = cardElem.parentNode;

@@ -1,7 +1,3 @@
-/**
- * Created by ethangodt on 6/30/15.
- */
-
 (function () {
     'use strict';
 
@@ -40,7 +36,7 @@
     for (var i = 0; i < buttons.length; i++) {
         buttons[i].addEventListener("click", mobileNavClickHandler);
     }
-    
+
     function mobileNavClickHandler () {
 
         if (window.innerWidth <= 485) {
