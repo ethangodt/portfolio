@@ -2,7 +2,7 @@
  * Created by ethangodt on 6/29/15.
  */
 
-app.Title = function Title (container, id) {
+export default function Title (container, id) {
     var self = this;
 
 	this.elem = container.querySelector(".titleContainer");
@@ -18,7 +18,7 @@ app.Title = function Title (container, id) {
 	});
 };
 
-app.Title.prototype.animateTitle = function animateTitle (scrollAmt) {
+Title.prototype.animateTitle = function animateTitle (scrollAmt) {
 	if (scrollAmt < 10) {
 		this.elem.style.opacity = 1;
 		this.elem.style.transform = "scale(1)";

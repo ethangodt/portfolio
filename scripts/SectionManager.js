@@ -1,13 +1,11 @@
-/**
- * Created by ethangodt on 6/28/15.
- */
+import sectionFactory from './sectionFactory'
 
-app.SectionManager = function SectionManager () {
+function SectionManager () {
 	var self = this;
 
-	this.about = new app.sectionFactory("aboutSection");
-	this.design = new app.sectionFactory("designSection");
-	this.dev = new app.sectionFactory("devSection");
+	this.about = new sectionFactory("aboutSection");
+	this.design = new sectionFactory("designSection");
+	this.dev = new sectionFactory("devSection");
 
 	this.currentSection = null;
 
@@ -28,7 +26,7 @@ app.SectionManager = function SectionManager () {
 			buttons[i].addEventListener("click", navClickHandler);
 		}
 	}());
-	
+
 	function navClickHandler () {
 		var id = this.getAttribute("id"),
 			section;
@@ -51,12 +49,14 @@ app.SectionManager = function SectionManager () {
 	}
 };
 
-app.SectionManager.prototype.setCurrentSection = function setCurrentSection (newSection) {
+SectionManager.prototype.setCurrentSection = function setCurrentSection (newSection) {
 	this.currentSection = newSection;
 };
 
-app.SectionManager.prototype.switchSections = function switchSections (currentSection, newSection) {
+SectionManager.prototype.switchSections = function switchSections (currentSection, newSection) {
 	currentSection.sectionOut(); // within this function there is a delay on the animate in
 	this.setCurrentSection(newSection);
 	newSection.sectionIn(); // within this function there is a delay wrapping the whole transition
 };
+
+export default SectionManager

@@ -2,20 +2,20 @@
  * Created by ethangodt on 6/29/15.
  */
 
-app.Card = function Card (cardElem) {
+export function Card (cardElem) {
 	this.elem = cardElem;
 	this.wrapperElem = cardElem.parentNode;
 };
 
-app.Card.prototype.animateIn = function animateIn () {
+Card.prototype.animateIn = function animateIn () {
     this.elem.classList.remove("unloaded");
 };
 
-app.Card.prototype.animateOut = function animateOut () {
+Card.prototype.animateOut = function animateOut () {
     this.elem.classList.add("unloaded");
 };
 
-app.Card.prototype.shiftDepth = function shiftDepth (newCardClass, wrapperClass) {
+Card.prototype.shiftDepth = function shiftDepth (newCardClass, wrapperClass) {
 	var currentWrapperClass = this.wrapperElem.classList[0],
 		cardClassArr = Array.prototype.slice.call(this.elem.classList),
 		oldCardClass = cardClassArr.reduce(function (acc, className) { // return only the class name string I'm looking for
@@ -34,7 +34,7 @@ app.Card.prototype.shiftDepth = function shiftDepth (newCardClass, wrapperClass)
 	this.elem.classList.add(newCardClass);
 };
 
-app.Card.prototype.getHeight = function getHeight () {
+Card.prototype.getHeight = function getHeight () {
 	var divHeight = this.elem.offsetHeight,
 		bottomMargin = 115;
 
@@ -45,7 +45,7 @@ app.Card.prototype.getHeight = function getHeight () {
 
 
 
-app.CardsManager = function CardsManager (cardsArr, id) {
+export function CardsManager (cardsArr, id) {
    	var self = this;
 
 	this.cards = cardsArr;
@@ -55,7 +55,7 @@ app.CardsManager = function CardsManager (cardsArr, id) {
 	})
 };
 
-app.CardsManager.prototype.getHeight = function getHeight () {
+CardsManager.prototype.getHeight = function getHeight () {
 	var totalHeight = 0;
 
 	this.cards.forEach(function (card) {
@@ -65,7 +65,7 @@ app.CardsManager.prototype.getHeight = function getHeight () {
 	return totalHeight;
 };
 
-app.CardsManager.prototype.shiftDepths = function shiftDepths (scrollVal) {
+CardsManager.prototype.shiftDepths = function shiftDepths (scrollVal) {
 	var self = this,
 		firstZone = 175 + this.cards[0].getHeight(),
 		secondZone = firstZone + this.cards[1].getHeight(),
@@ -92,7 +92,7 @@ app.CardsManager.prototype.shiftDepths = function shiftDepths (scrollVal) {
 	}
 };
 
-app.CardsManager.prototype.animateIn = function animateIn () {
+CardsManager.prototype.animateIn = function animateIn () {
 	var self = this,
 		numOfCards = this.cards.length;
 
@@ -106,7 +106,7 @@ app.CardsManager.prototype.animateIn = function animateIn () {
 	}(0));
 };
 
-app.CardsManager.prototype.animateOut = function animateIn () {
+CardsManager.prototype.animateOut = function animateIn () {
 	this.cards.forEach(function (card) {
 		card.animateOut();
 	});

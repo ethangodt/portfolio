@@ -1,11 +1,6 @@
-/**
- * Created by ethangodt on 6/29/15.
- */
+import SectionManager from './SectionManager'
 
 (function init () {
 	// sets up main view objects
-	var view = new app.SectionManager();
-
-	//sets up skrollr for parallax
-	var s = skrollr.init();
+	var view = new SectionManager();
 }());

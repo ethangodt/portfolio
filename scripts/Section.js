@@ -1,8 +1,4 @@
-/**
- * Created by ethangodt on 6/28/15.
- */
-
-app.Section = function Section (container, content, title, id) {
+export default function Section (container, content, title, id) {
 	var self = this,
 		event = new CustomEvent(id + "Scroll");
 
@@ -27,23 +23,23 @@ app.Section = function Section (container, content, title, id) {
 	});
 };
 
-app.Section.prototype.setMainWrapperHeight = function setMainWrapperHeight () {
+Section.prototype.setMainWrapperHeight = function setMainWrapperHeight () {
 	var pagePaddingTop = 0;
 	console.log(this.mainWrapper);
 	this.mainWrapper.style.height = pagePaddingTop + this.content.getHeight() + "px";
 };
 
-app.Section.prototype.animateOut = function animateOut () {
+Section.prototype.animateOut = function animateOut () {
 	this.sectionWrapper.classList.add("inactive");
 	this.content.animateOut();
 };
 
-app.Section.prototype.contentOut = function contentOut () {
+Section.prototype.contentOut = function contentOut () {
 	this.active = false;
 	this.sectionWrapper.style.display = "none";
 };
 
-app.Section.prototype.contentIn = function contentIn () {
+Section.prototype.contentIn = function contentIn () {
 	this.active = true;
 	this.sectionWrapper.style.display = "block";
 	this.setMainWrapperHeight();
@@ -52,12 +48,12 @@ app.Section.prototype.contentIn = function contentIn () {
 	window.scrollTo(0, 0);
 };
 
-app.Section.prototype.animateIn = function animateIn () {
+Section.prototype.animateIn = function animateIn () {
     this.sectionWrapper.classList.remove("inactive");
 	this.content.animateIn();
 };
 
-app.Section.prototype.sectionOut = function sectionOut () { // a combined function to bring the section fully out
+Section.prototype.sectionOut = function sectionOut () { // a combined function to bring the section fully out
 	var self = this;
 
 	this.animateOut();
@@ -66,7 +62,7 @@ app.Section.prototype.sectionOut = function sectionOut () { // a combined functi
 	}, 600); // on a delay to allow the content to fully fade out before removing from flow
 };
 
-app.Section.prototype.sectionIn = function sectionIn () { // a combined function to bring the section fully in
+Section.prototype.sectionIn = function sectionIn () { // a combined function to bring the section fully in
 	var self = this;
 
 	setTimeout(function () { // used with a timer b/c it will always be paired with section out which needs time to animate
@@ -74,3 +70,4 @@ app.Section.prototype.sectionIn = function sectionIn () { // a combined function
 		self.animateIn();
 	}, 600);
 };
+
