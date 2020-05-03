@@ -22,11 +22,11 @@ Hello! I thought I'd find you here. I'd love to chat with you about how I made t
 
         <p>I'm a full stack developer with years of experience designing responsive, hi-res websites. I’m currently looking for a full-time developer position.</p>
         <ul id="buttonContainer" class="mobileMenuTransition">
-            <li id="aboutButton">
+            <li onclick="router.to('/about')" id="aboutButton">
                 <div class="default">ABOUT</div>
                 <div class="active">ABOUT</div>
             </li>
-            <li id="devButton">
+            <li onclick="router.to('/engineering')" id="devButton">
               <div class="default">DEV</div>
               <div class="active">DEV</div>
             </li>
@@ -42,6 +42,7 @@ Hello! I thought I'd find you here. I'd love to chat with you about how I made t
             </a>
         </ul>
     </nav>
+    <div id="APP"></div>
     <div class="main-wrapper">
 
         <div id="aboutSection" class="sectionContainer inactive">
@@ -161,7 +162,7 @@ Hello! I thought I'd find you here. I'd love to chat with you about how I made t
         </div>
     </div>
     <script src="scripts/setup.js"></script>
-    <script src="scripts/CardsAndManager.js"></script>
+    <script src="scripts/cards/CardsAndManager.js"></script>
     <script src="scripts/Title.js"></script>
     <script src="scripts/Section.js"></script>
     <script src="scripts/SectionManager.js"></script>

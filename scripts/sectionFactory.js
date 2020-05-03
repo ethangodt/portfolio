@@ -1,4 +1,4 @@
-import {Card, CardsManager} from './CardsAndManager'
+import {Card, CardsManager} from './cards/CardsAndManager'
 import Title from './Title'
 import Section from './Section'
 
