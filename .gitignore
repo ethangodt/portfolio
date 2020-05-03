@@ -1,6 +1,11 @@
 .idea/
 psds/
 screenshots
+node_modules/
+
+# Parcel Stuff
+dist/
+.cache/
 
 # Compiled source #
 ###################
