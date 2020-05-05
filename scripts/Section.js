@@ -1,7 +1,6 @@
 import { htmlToElement } from "./html";
 import { delay } from "./utils";
 
-
 // TODO reset the width when the window resizes
 
 export default function Section(id, title, cards) {
@@ -25,6 +24,7 @@ export default function Section(id, title, cards) {
   window.addEventListener("resize", () => {
     if (!this.active) return;
     this._setMainWrapperHeight();
+    this._setCardWidths()
   });
 
   let throttleScrollEffects = false;
@@ -57,9 +57,7 @@ Section.prototype.animateIn = function animateIn() {
       window.scrollTo(0, 0);
       this.wrapper.classList.remove("inactive");
       this._setMainWrapperHeight();
-      this.cards.forEach((card, i) => {
-        card.setWidth(this.cards[0].el.offsetWidth + "px");
-      });
+      this._setCardWidths()
       return Promise.all(
         this.cards.map(
           (card, i) =>
@@ -86,6 +84,14 @@ Section.prototype.animateOut = function animateOut() {
       return delay(600);
     });
 };
+
+Section.prototype._setCardWidths = function _setCardWidths() {
+  this.cards.forEach((card, i) => {
+    if (i !== 0) {
+      card.setWidth(this.cards[0].el.offsetWidth + "px");
+    }
+  });
+}
 
 Section.prototype._setMainWrapperHeight = function setMainWrapperHeight() {
   let newHeight = 0;

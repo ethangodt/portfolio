@@ -28,10 +28,11 @@ Card.prototype.shiftDepth = function shiftDepth(
     }px`,
     zIndex: depth * -10,
     opacity: 1 - 0.4 * specialDepth(depth, percentageCompleteWithZone),
-    perspectiveOrigin: "center top",
+    left: `calc((99vw - 250px) * .5 + 250px - ${this.el.offsetWidth * .5})`,
     transform: `scale(${
       1 - 0.04 * specialDepth(depth, percentageCompleteWithZone)
     })`,
+    //
     // something wacko is happening with CSS 3D space,
     // when the heights of different objects are pushed back
     // — despite perspective-origin or anything —
