@@ -1,73 +1,127 @@
-export default function Section (container, content, title, id) {
-	var self = this,
-		event = new CustomEvent(id + "Scroll");
+import { htmlToElement } from "./html";
+import { delay } from "./utils";
 
-	this.active = false; // currently visible in the view
+export default function Section(id, title, cards) {
+  const template = `
+    <div class="sectionContainer inactive"></div>
+  `;
+  // TODO get rid of id and custom event
+  const event = new CustomEvent(id + "Scroll");
+  this.cardMargin = 80; // check _cards.scss ....
+  this.currentScrollZone = 0;
+  this.active = false; // currently visible in the view
+  this.appWrapper = document.querySelector(".main-wrapper");
+  this.wrapper = htmlToElement(template);
+  this.wrapper.appendChild(title.renderable());
+  this.cards = cards;
+  this.cards.forEach((card, i) => {
+    card.shiftDepth(i);
+    this.wrapper.appendChild(card.renderable());
+  });
 
-	// DOM nodes
-	this.mainWrapper = document.querySelector(".main-wrapper");
-	this.sectionWrapper = container;
+  window.addEventListener("resize", () => {
+    if (!this.active) return;
+    this._setMainWrapperHeight();
+  });
 
-	// view objects
-	this.title = this.sectionWrapper.querySelector(".titleContainer");
-	this.content = content;
+  let throttleScrollEffects = false;
+  window.addEventListener("scroll", () => {
+    if (!this.active) {
+      return;
+    }
+    if (throttleScrollEffects) {
+      return;
+    } else {
+      this._shiftCardDepths(window.scrollY);
+      throttleScrollEffects = true;
+      setTimeout(() => {
+        throttleScrollEffects = false;
+      }, 30);
+    }
+    window.dispatchEvent(event);
+  });
+}
 
-	window.addEventListener("resize", function () {
-		if (!self.active) return;
-		self.setMainWrapperHeight();
-	});
-
-	window.addEventListener("scroll", function () {
-		if (!self.active) return;
-		window.dispatchEvent(event);
-	});
+Section.prototype.renderable = function renderable() {
+  return this.wrapper;
 };
 
-Section.prototype.setMainWrapperHeight = function setMainWrapperHeight () {
-	var pagePaddingTop = 0;
-	console.log(this.mainWrapper);
-	this.mainWrapper.style.height = pagePaddingTop + this.content.getHeight() + "px";
+Section.prototype.animateIn = function animateIn() {
+  return Promise.resolve()
+    .then(() => delay(50)) // ugh, need to add a delay here so we can give the browser time to paint the DOM to the screen
+    .then(() => {
+      this.active = true;
+      window.scrollTo(0, 0);
+      this.wrapper.classList.remove("inactive");
+      this._setMainWrapperHeight();
+      this.cards.forEach((card, i) => {
+        card.setWidth(this.cards[0].el.offsetWidth + "px");
+      });
+      return Promise.all(
+        this.cards.map(
+          (card, i) =>
+            new Promise((resolve, reject) => {
+              setTimeout(() => {
+                card.animateIn();
+              }, 300 * i);
+            })
+        )
+      );
+    });
 };
 
-Section.prototype.animateOut = function animateOut () {
-	this.sectionWrapper.classList.add("inactive");
-	this.content.animateOut();
+Section.prototype.animateOut = function animateOut() {
+  return Promise.resolve()
+    .then(() => {
+      this.active = false;
+      this.wrapper.classList.add("inactive");
+      this.cards.forEach((card) => {
+        card.animateOut();
+      });
+    })
+    .then(() => {
+      return delay(600);
+    });
 };
 
-Section.prototype.contentOut = function contentOut () {
-	this.active = false;
-	this.sectionWrapper.style.display = "none";
+Section.prototype._setMainWrapperHeight = function setMainWrapperHeight() {
+  let newHeight = 0;
+  this.cards.forEach((card) => {
+    let cardAndMargin = card.getHeight() + this.cardMargin;
+    newHeight += cardAndMargin;
+  });
+  this.appWrapper.style.height = newHeight + "px";
 };
 
-Section.prototype.contentIn = function contentIn () {
-	this.active = true;
-	this.sectionWrapper.style.display = "block";
-	this.setMainWrapperHeight();
-
-	// reset scroll position - after elements are set to "display block" this scroll event resets positions and depths of all content
-	window.scrollTo(0, 0);
+Section.prototype._shiftCardDepths = function _shiftCardDepths(scrollVal) {
+  let currentScrollZone = this.currentScrollZone;
+  let totalMargin = 0;
+  let totalCardHeight = 0;
+  let startOfZones = [0];
+  for (let i = 0; i < this.cards.length; i++) {
+    totalMargin += this.cardMargin;
+    totalCardHeight += this.cards[i].getHeight();
+    let startOfNextScrollZone = totalMargin + totalCardHeight;
+    startOfZones.push(startOfNextScrollZone);
+    if (scrollVal < startOfNextScrollZone) {
+      // you're not in the next scrollZone, you're in this one
+      currentScrollZone = i;
+      break;
+    }
+  }
+  const zoneHeight =
+    startOfZones[currentScrollZone + 1] - startOfZones[currentScrollZone];
+  const zoneOffsetScrollHeight = scrollVal - startOfZones[currentScrollZone];
+  const percentageCompleteWithZone = zoneOffsetScrollHeight / zoneHeight;
+  let depthHasUpdated = currentScrollZone !== this.currentScrollZone;
+  let almostUpdated = percentageCompleteWithZone > 0.8;
+  if (depthHasUpdated || almostUpdated) {
+    this.currentScrollZone = currentScrollZone;
+    this.cards.forEach((card, i) => {
+      card.shiftDepth(
+        Math.max(i - this.currentScrollZone, 0),
+        percentageCompleteWithZone >= 1 ? 0 : percentageCompleteWithZone // I need to see 100% as 0%
+      );
+    });
+  }
 };
-
-Section.prototype.animateIn = function animateIn () {
-    this.sectionWrapper.classList.remove("inactive");
-	this.content.animateIn();
-};
-
-Section.prototype.sectionOut = function sectionOut () { // a combined function to bring the section fully out
-	var self = this;
-
-	this.animateOut();
-	setTimeout(function () {
-		self.contentOut();
-	}, 600); // on a delay to allow the content to fully fade out before removing from flow
-};
-
-Section.prototype.sectionIn = function sectionIn () { // a combined function to bring the section fully in
-	var self = this;
-
-	setTimeout(function () { // used with a timer b/c it will always be paired with section out which needs time to animate
-		self.contentIn();
-		self.animateIn();
-	}, 600);
-};
-

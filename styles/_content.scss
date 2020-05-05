@@ -45,7 +45,6 @@
 
 .sectionContainer {
 	transition: opacity 500ms ease;
-	display: none; // init - changed immediately on load in SectionManager
 	opacity: 1;
 }
 

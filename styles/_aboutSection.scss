@@ -1,4 +1,4 @@
-#aboutSection {
+#about-card {
 	h3 {
 		padding: 9%;
 		line-height: 180%;
@@ -115,7 +115,7 @@
 }
 
 @media ($medBreakRule) {
-	#aboutSection {
+	#about-card {
 		h3 {
 			font-size: 1.3em;
 		}
@@ -135,7 +135,7 @@
 }
 
 @media ($smallBreakRule) {
-	#aboutSection h3 {
+	#about-card h3 {
 		font-size: 1.1em;
 	}
 }

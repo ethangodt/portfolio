@@ -6,169 +6,42 @@ Hello! I thought I'd find you here. I'd love to chat with you about how I made t
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Ethan Godt - Full Stack Developer</title>
-    <link rel="stylesheet" href="styles/main.css"/>
-</head>
-<body class="hoverEnabled">
+    <link rel="stylesheet" href="styles/main.scss" />
+  </head>
+  <body class="hoverEnabled">
     <nav>
-        <h1>ETHAN GODT<span>full stack dev</span></h1>
-
-        <svg id="navIcon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="32px" style="enable-background:new 0 0 32 32;" version="1.1" viewBox="0 0 32 32" width="32px" xml:space="preserve">
-            <path class="navIconFill" d="M4 10h24c1.104 0 2-0.896 2-2s-0.896-2-2-2H4C2.896 6 2 6.9 2 8S2.896 10 4 10z M28 14H4c-1.104 0-2 0.896-2 2 s0.896 2 2 2h24c1.104 0 2-0.896 2-2S29.104 14 28 14z M28 22H4c-1.104 0-2 0.896-2 2s0.896 2 2 2h24c1.104 0 2-0.896 2-2 S29.104 22 28 22z"></path>
-        </svg>
-
-        <p>I'm a full stack developer with years of experience designing responsive, hi-res websites. I’m currently looking for a full-time developer position.</p>
-        <ul id="buttonContainer" class="mobileMenuTransition">
-            <li onclick="router.to('/about')" id="aboutButton">
-                <div class="default">ABOUT</div>
-                <div class="active">ABOUT</div>
-            </li>
-            <li onclick="router.to('/engineering')" id="devButton">
-              <div class="default">DEV</div>
-              <div class="active">DEV</div>
-            </li>
-            <li id="designButton">
-                <div class="default">DESIGN</div>
-                <div class="active">DESIGN</div>
-            </li>
-            <a href="https://www.linkedin.com/in/ethangodt" target="_blank">
-                <li>
-                    <div class="default">CONTACT</div>
-                    <div class="active">CONTACT</div>
-                </li>
-            </a>
-        </ul>
+      <h1>ETHAN GODT <span>full stack dev</span></h1>
+      <p>
+        I'm a full stack developer with years of experience designing
+        responsive, hi-res websites. I’m currently looking for a full-time
+        developer position.
+      </p>
+      <ul id="buttonContainer" class="mobileMenuTransition">
+        <li onclick="router.to('/about')" id="aboutButton">
+          <div class="default">ABOUT</div>
+          <div class="active">ABOUT</div>
+        </li>
+        <li onclick="router.to('/engineering')" id="devButton">
+          <div class="default">DEV</div>
+          <div class="active">DEV</div>
+        </li>
+        <li id="designButton">
+          <div class="default">DESIGN</div>
+          <div class="active">DESIGN</div>
+        </li>
+        <a href="https://www.linkedin.com/in/ethangodt" target="_blank">
+          <li>
+            <div class="default">CONTACT</div>
+            <div class="active">CONTACT</div>
+          </li>
+        </a>
+      </ul>
     </nav>
-    <div id="APP"></div>
-    <div class="main-wrapper">
-
-        <div id="aboutSection" class="sectionContainer inactive">
-            <div class="titleContainer">
-                <h2>ABOUT</h2>
-            </div>
-            <div class="cardWrapperFront">
-                <div class="card cardFront">
-                    <h3>I'm a full stack developer with years of experience designing responsive, hi-res websites. I can switch painlessly between server-side Javascript code and Photoshop documents, and I love working in teams where I’m integral to many parts of an app. I’m currently looking for a full-time position to work on great web-based products.</h3>
-                    <div class="skillsContainer">
-                        <h3>Skills</h3>
-                        <div class="iconContainer">
-                            <div class="icon">
-                                <img src="images/jsIcon.svg" alt="Javascript Icon" height="70%"/>
-                            </div>
-                            <div class="icon yo">
-                                <img src="images/htmlIcon.svg" alt="HTML 5 Icon" height="70%"/>
-                            </div>
-                            <div class="icon">
-                                <img src="images/cssIcon.svg" alt="CSS Icon" width="70%"/>
-                            </div>
-                            <div class="icon">
-                                <img src="images/gitIcon.svg" alt="Git Icon" height="70%"/>
-                            </div>
-                            <div class="icon">
-                                <img src="images/sassIcon.svg" alt="Sass Icon" width="70%"/>
-                            </div>
-                            <div class="icon">
-                                <img src="images/bootstrapIcon.svg" alt="Bootstrap Icon" height="70%"/>
-                            </div>
-                            <div class="icon">
-                                <img src="images/jqueryIcon.svg" alt="jQuery Icon" width="70%"/>
-                            </div>
-                            <div class="icon">
-                                <img src="images/adobeIcon.svg" alt="Adobe Icon" height="70%"/>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="adobeCert">
-                        <div class="container">
-                            <p>Adobe Certified Expert - <span>Photoshop</span></p>
-                            <img src="images/adobe-logo.png" alt=""/>
-                        </div>
-                    </div>
-                    <div class="connectLink">
-                        <a href="https://www.linkedin.com/in/ethangodt" target="_blank">learn more on linkedin<span> ></span></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div id="designSection" class="sectionContainer inactive">
-            <div class="titleContainer">
-                <h2>DESIGN</h2>
-            </div>
-            <div class="cardWrapperFront">
-                <div id="plantMidwest" class="card cardFront unloaded">
-                    <img class="headerImage" src="images/plantMidwestHeader.jpg"/>
-                    <p class="solo">PlantMidwest is a new St. Louis religious organization that meets quarterly in several cities throughout the midwest. Through LaunchBot Creative I was able to design their first website. The site needed to describe the organization, make it very easy to sign up for their quarterly events, and catalog media from each of those events for later viewing. We worked with the client for a few months altering page designs and functionality, and eventually landed on a final product that is one of the best sites that we delivered. The home page above and the image clips below are a sample of the muted and modern feel of the final design.</p>
-                    <img src="images/plantMidwestHightlight.jpg"/>
-                    <div class="browserSnapshot">
-                        <img src="images/plantMidwestPageLayout.jpg"/>
-                    </div>
-                </div>
-            </div>
-            <div class="cardWrapperMid">
-              <div id="stcCrossfit" class="card cardMid unloaded">
-                <img class="headerImage" src="images/stcCrossfitHeader.jpg"/>
-                <p class="solo">CrossFit St. Charles is the prominent CrossFit gym in the St. Charles area, and as CrossFit gained popularity over the past couple years they very quickly outgrew their Typepad "drag and drop" site. They very much needed something developed that felt more professional. I was able to design a site for them which better enabled them to do custom outreach to their members, which better fit the color scheme and branding of their building’s signage.</p>
-                <div class="browserSnapshot">
-                  <img src="images/stcCrossfitHighlight.jpg"/>
-                </div>
-                <div class="browserSnapshot">
-                  <img src="images/stcCrossfitPageLayout.jpg"/>
-                </div>
-              </div>
-            </div>
-            <div class="cardWrapperBack">
-              <div id="ekklesiaStl" class="card cardBack unloaded">
-                <img class="headerImage" src="images/ekkHeader.jpg"/>
-                <p class="solo">Ekklesia is a small church in St. Charles that needed a first website. They had been previously relying on a podcasting app to share messages and news, so we built them a responsive site that they transitioned to using in junction with social media for communication. The site was fully responsive, designed for high resolution displays, and included Google maps integration for community groups and media management for weekly sermons.</p>
-                <div class="browserSnapshot">
-                  <img src="images/ekkHighlight.jpg"/>
-                </div>
-                <div class="browserSnapshot">
-                  <img src="images/ekkPageLayout.jpg"/>
-                </div>
-              </div>
-            </div>
-        </div>
-
-        <div id="devSection" class="sectionContainer inactive">
-            <div class="titleContainer">
-                <h2>DEV</h2>
-            </div>
-            <div class="cardWrapperFront">
-                <div id="songlink" class="card cardFront unloaded">
-                    <img class="headerImage" src="images/songlinkHeader.jpg"/>
-                    <p>Songlink is a URL creation tool — featured on <a href="http://lifehacker.com/songlink-lets-you-create-music-links-with-multiple-list-1751452321" target="_blank">LifeHacker</a> — that allows people to share music easily. During the development of Songlink I undertook both back-end developer and designer responsibilities. On the back-end I was integral in developing the API that queried third-party catalogs for song information, and on the front-end I designed and implemented each page layout. I was also central in conceptualizing a request system involving server-side page rendering and CDN caching through AWS.</p>
-                    <div class="browserSnapshot">
-                      <img src="images/songlinkHomepage.jpg"/>
-                    </div>
-                    <div class="browserSnapshot">
-                      <img src="images/songlinkSongpage.jpg"/>
-                    </div>
-                </div>
-            </div>
-            <div class="cardWrapperMid">
-                <div id="dartfeed" class="card cardMid unloaded">
-                    <img class="headerImage" src="images/dartfeedHeader.png"/>
-                    <p>Dartfeed's goal was to take the standard features of an RSS reader and pair them with a machine learning backend. It's primary feature is to bring a user's attention to articles in subscribed feeds that he/she may especially enjoy reading based on previous use. On this project I worked on backed web workers that autonomously fetched RSS feeds and transported batches of user preferences to the machine learning service for computational training.</p>
-                    <div class="browserSnapshot">
-                        <img src="images/dartfeedFeedpage.jpg"/>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <script src="scripts/setup.js"></script>
-    <script src="scripts/cards/CardsAndManager.js"></script>
-    <script src="scripts/Title.js"></script>
-    <script src="scripts/Section.js"></script>
-    <script src="scripts/SectionManager.js"></script>
-    <script src="scripts/sectionFactory.js"></script>
-    <script src="scripts/mobileNav.js"></script>
-    <script src="scripts/aboutSection.js"></script>
-    <script src="scripts/init.js"></script>
-</body>
+    <div id="APP" class="main-wrapper"></div>
+    <script src="scripts/app.js"></script>
+  </body>
 </html>
