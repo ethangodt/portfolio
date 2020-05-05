@@ -4,12 +4,13 @@ import Card from "./cards/card";
 import Title from "./Title";
 import about from "./cards/views/about.html";
 import songlink from "./cards/views/songlink.html";
+import plantMW from "./cards/views/plant-midwest.html";
 
 window.router = new Router(
   {
     fallback: "/about",
     "/about": getRoute("aboutSection", "about", [about]),
-    "/engineering": getRoute("devSection", "eng", [songlink, songlink, about, songlink]),
+    "/engineering": getRoute("devSection", "eng", [about, plantMW, songlink]),
   },
   document.querySelector("#APP")
 );

@@ -1,13 +1,16 @@
 import { htmlToElement } from "./html";
 import { delay } from "./utils";
 
+
+// TODO reset the width when the window resizes
+
 export default function Section(id, title, cards) {
   const template = `
     <div class="sectionContainer inactive"></div>
   `;
   // TODO get rid of id and custom event
   const event = new CustomEvent(id + "Scroll");
-  this.cardMargin = 80; // check _cards.scss ....
+  this.cardMargin = 100; // check _cards.scss ....
   this.currentScrollZone = 0;
   this.active = false; // currently visible in the view
   this.appWrapper = document.querySelector(".main-wrapper");
