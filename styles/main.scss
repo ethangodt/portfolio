@@ -1,6 +1,5 @@
 // base partials
 @import "reset";
-@import "fonts";
 
 // base colors
 $textGrey: #333131;
@@ -18,13 +17,13 @@ body {
 }
 
 h1, h2, h3, h4, h5 h6 {
-	font-family: 'nerissemibold', sans-serif;
+	font-family: 'ubuntu', sans-serif;
 	letter-spacing: 3px;
 	-webkit-font-smoothing: antialiased;
 }
 
 p {
-	font-family: 'ubuntulight', sans-serif;
+	font-family: 'ubuntu', sans-serif;
 	-webkit-font-smoothing: antialiased;
 	color: $textGrey;
 	line-height: 180%;

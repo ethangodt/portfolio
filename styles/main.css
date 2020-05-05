@@ -58,9 +58,9 @@ table {
   font-weight: normal;
   font-style: normal; }
 @font-face {
-  font-family: 'ubuntulight';
+  font-family: 'ubuntu';
   src: url("fonts/ubuntu-light-webfont.eot");
-  src: url("fonts/ubuntu-light-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/ubuntu-light-webfont.woff2") format("woff2"), url("fonts/ubuntu-light-webfont.woff") format("woff"), url("fonts/ubuntu-light-webfont.ttf") format("truetype"), url("fonts/ubuntu-light-webfont.svg#ubuntulight") format("svg");
+  src: url("fonts/ubuntu-light-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/ubuntu-light-webfont.woff2") format("woff2"), url("fonts/ubuntu-light-webfont.woff") format("woff"), url("fonts/ubuntu-light-webfont.ttf") format("truetype"), url("fonts/ubuntu-light-webfont.svg#ubuntu") format("svg");
   font-weight: normal;
   font-style: normal; }
 body {
@@ -72,7 +72,7 @@ h1, h2, h3, h4, h5 h6 {
   -webkit-font-smoothing: antialiased; }
 
 p {
-  font-family: 'ubuntulight', sans-serif;
+  font-family: 'ubuntu', sans-serif;
   -webkit-font-smoothing: antialiased;
   color: #333131;
   line-height: 180%;
@@ -358,7 +358,7 @@ nav {
   line-height: 180%;
   letter-spacing: 0;
   font-size: 1.4em;
-  font-family: 'ubuntulight', sans-serif; }
+  font-family: 'ubuntu', sans-serif; }
 #aboutSection h3 + p {
   padding-top: 0; }
 #aboutSection .skillsContainer {
@@ -427,7 +427,7 @@ nav {
     padding: 0;
     margin: 20px 0 20px 0;
     text-decoration: none;
-    font-family: 'ubuntulight', sans-serif;
+    font-family: 'ubuntu', sans-serif;
     color: #333131;
     line-height: 180%;
     font-size: .91em; }

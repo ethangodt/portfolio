@@ -6,6 +6,7 @@ nav	{
 	will-change: transform;
 
 	h1 {
+		font-family: 'ubuntu', sans-serif;
 		font-size: 20px;
 		color: $textGrey;
 		margin-top: 50px;
@@ -14,8 +15,8 @@ nav	{
 		span {
 			display: block;
 			margin-top: 15px;
-			font-size: .7em;
-			color: $splashGreen;
+			font-size: .6em;
+			color: #a1a1a1;
 		}
 	}
 
@@ -43,7 +44,7 @@ nav	{
 
 	li {
 		transform-style: preserve-3d;
-		font-family: "neristhin", sans-serif;
+		font-family: "ubuntu", sans-serif;
 		color: $textGrey;
 		letter-spacing: 2px;
 		transition: all 250ms ease;

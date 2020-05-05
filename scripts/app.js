@@ -10,7 +10,7 @@ window.router = new Router(
   {
     fallback: "/about",
     "/about": getRoute("aboutSection", "about", [about]),
-    "/engineering": getRoute("devSection", "eng", [about, plantMW, songlink]),
+    "/engineering": getRoute("devSection", "engineering", [about, plantMW, songlink]),
   },
   document.querySelector("#APP")
 );
