@@ -11,15 +11,19 @@
   }
 
   .skillsContainer {
-    padding: 60px 0 120px 0;
+    padding: 25px 0 60px 0;
     text-align: center;
-    background: url("../images/script-bg.jpg");
+    //background: url("../images/script-bg.jpg");
+    background: linear-gradient(90deg, #e2e2e2, #c5c5c5);
+    background-color: #e2e2e2;
 
     h3 {
+      color: white;
       padding: 0;
     }
 
     .iconContainer {
+      text-align: initial;
       margin-top: 20px;
       padding: 0 9% 0 9%;
       // flexbox support for firefox, chrome, and safari
@@ -39,6 +43,7 @@
         width: 140px;
         background-color: white;
         margin: 0 4px 8px 4px;
+        border-radius: 5px;
       }
 
       .icon:hover {
@@ -50,7 +55,7 @@
 
       img {
         position: relative;
-        height: 70%;
+        width: 60%;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);

@@ -17,18 +17,20 @@
   }
 
   img.float {
+    border-radius: 3px;
+    max-width: 275px;
     float: left;
     width: 40%;
-    margin: 9% 10px 10px 9%;
+    margin: 9% 30px 20px 9%;
   }
 
   img + img {
-		border-top: #848484 solid 75px;
+    border-top: #848484 solid 75px;
   }
 
   p {
     font-size: calc(13px + 0.5vw);
-    margin: 4% 9%;
+    margin: 20px 9%;
   }
 
   p:first-of-type {
@@ -43,6 +45,13 @@
 .card.static {
   position: fixed;
   top: 175px;
+}
+
+#about-card {
+  .float {
+    margin: 9% 30px 20px 9%;
+    transform: rotate(-0.5deg);
+  }
 }
 
 // these card class types are for each position in the stack
@@ -85,6 +94,15 @@
     border-radius: 10px;
     img.float {
       display: none;
+    }
+  }
+  #about-card {
+    img.float {
+      margin: 10% auto -1% auto;
+      width: 100%;
+      transform: rotate(0);
+      display: block;
+      float: none;
     }
   }
 }
