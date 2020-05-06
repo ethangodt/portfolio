@@ -1,9 +1,9 @@
 export default class Router {
   constructor(routeConfig, targetEl) {
     // this._eventQueue = [];
+    // this._setupMutationObserver(this.targetEl);
     this._isRouting = false; // throttle routing to not complicate animations
     this.targetEl = targetEl;
-    // this._setupMutationObserver(this.targetEl);
     this.routes = {};
     this.register(routeConfig);
     this._fallbackRoute = routeConfig.fallback;
@@ -43,10 +43,7 @@ export default class Router {
   _unMountRoute(path) {
     const route = this.routes[path];
     return route.willUnmount().then(() => {
-      while (this.targetEl.firstChild) {
-        // honestly there should only ever be one
-        this.targetEl.removeChild(this.targetEl.firstChild);
-      }
+      this.targetEl.removeChild(route.renderable)
     });
   }
   _mountRoute(path) {

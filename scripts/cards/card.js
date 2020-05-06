@@ -1,6 +1,7 @@
 import { htmlToElement } from "../html";
 
-export default function Card(html) {
+export default function Card(html, backgroundColor) {
+  this.backgroundColor = backgroundColor;
   this.el = htmlToElement(html);
 }
 
@@ -23,12 +24,10 @@ Card.prototype.shiftDepth = function shiftDepth(
 ) {
   const newStyle = {
     position: "fixed",
-    top: `${
-      175 - (32 * specialDepth(depth, percentageCompleteWithZone))
-    }px`,
+    top: `${175 - 32 * specialDepth(depth, percentageCompleteWithZone)}px`,
     zIndex: depth * -10,
     opacity: 1 - 0.4 * specialDepth(depth, percentageCompleteWithZone),
-    left: `calc((99vw - 250px) * .5 + 250px - ${this.el.offsetWidth * .5})`,
+    left: `calc((99vw - 250px) * .5 + 250px - ${this.el.offsetWidth * 0.5})`,
     transform: `scale(${
       1 - 0.04 * specialDepth(depth, percentageCompleteWithZone)
     })`,
