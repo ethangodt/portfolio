@@ -70,18 +70,21 @@
 // small
 @media ($smallBreakRule) {
   .main-wrapper {
-    margin-top: 55px;
     margin-left: 0;
 
     .titleContainer {
-      top: 140px;
+      margin-top: 30px;
+			width: 97%;
+      text-align: center;
+      height: 50px;
+      //margin-top: 20px;
+      //margin-left: 40px;
 
       h2 {
-        font-size: 3em;
+        font-size: 1.75em;
         color: white;
         letter-spacing: 9px;
-        position: fixed;
-        //text-shadow: 0 1px 7px #aeabab;
+        //position: fixed;
       }
     }
   }

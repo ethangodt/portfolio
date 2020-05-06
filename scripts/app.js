@@ -5,6 +5,7 @@ import Title from "./Title";
 import about from "./cards/views/about.html";
 import songlink from "./cards/views/songlink.html";
 import plantMW from "./cards/views/plant-midwest.html";
+import "./mobileNav" // fix this later
 
 const APP_CONTAINER = document.querySelector("#APP");
 

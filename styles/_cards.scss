@@ -1,28 +1,25 @@
 // card is the element that wraps content
 .card {
-	margin: 0 auto 100px; // the property from Section.js
-	transition: transform 30ms linear,
-				filter 300ms,
-				margin-top 700ms ease,
-				opacity 400ms ease;
-	opacity: 1;
-	background-color: white;
-	//max-width: 1060px;
-	box-shadow: 0px -2px 4px rgba(50, 50, 50, .1);
-	position: relative;
-	top: 0;
-	border-radius: 3px;
-	overflow: hidden;
+  margin: 0 auto 100px; // the property from Section.js
+  transition: transform 30ms linear, filter 300ms, margin-top 700ms ease,
+    opacity 400ms ease;
+  opacity: 1;
+  background-color: white;
+  //max-width: 1060px;
+  box-shadow: 0px -2px 4px rgba(50, 50, 50, 0.1);
+  position: relative;
+  top: 0;
+  border-radius: 10px;
+  overflow: hidden;
 
-
-	img {
-		width: 100%;
-	}
+  img {
+    width: 100%;
+  }
 }
 
 .card.static {
-	position: fixed;
-	top: 175px;
+  position: fixed;
+  top: 175px;
 }
 
 // these card class types are for each position in the stack
@@ -31,71 +28,37 @@
 }
 
 .cardMid {
-	position: fixed;
-	z-index: -10;
-	opacity: .7;
-	top: 140px;
+  position: fixed;
+  z-index: -10;
+  opacity: 0.7;
+  top: 140px;
 }
 
 .cardBack {
-	opacity: .5;
+  opacity: 0.5;
 }
 
-.unloaded { // load transition class
-	margin-top: 20px;
-	opacity: 0 !important;
+.unloaded {
+  // load transition class
+  margin-top: 20px;
+  opacity: 0 !important;
 }
-
 
 // BREAKPOINT DEPENDENT STYLES
 // large
-@media ($largeBreakRule)  {
-	.cardWrapper {
-		left: 275px;
-	}
-
-	.cardMid {
-		@include transform(perspective(7000px) translate3d(0, 0, -200px));
-	}
-
-	// temp fix for strange content length issue
-	#devSection .cardMid {
-		@include transform(perspective(7000px) translate3d(0, -15px, -200px));
-	}
-
-	.cardBack {
-		@include transform(perspective(7000px) translate3d(0, 0, -400px));
-	}
+@media ($largeBreakRule) {
+  .card {
+    border-radius: 3px;
+  }
 }
 
 // medium
-@media ($medBreakRule)  {
-	.cardWrapper {
-		left: 150px;
-	}
-
-	// these are to exagerate the height difference given the weird
-	.cardMid {
-		@include transform(perspective(7000px) translate3d(0, -16px, -200px));
-	}
-
-	.cardBack {
-		@include transform(perspective(7000px) translate3d(0, 36px, -400px));
-	}
+@media ($medBreakRule) {
 }
 
 // small
 @media ($smallBreakRule) {
-	.cardWrapper {
-		left: 0;
-		margin-top: 225px;
-	}
-
-	.cardMid {
-		@include transform(perspective(7000px) translate3d(0, -12px, -200px));
-	}
-
-	.cardBack {
-		@include transform(perspective(7000px) translate3d(0, 40px, -400px));
-	}
+	.card {
+    border-radius: 10px;
+  }
 }
