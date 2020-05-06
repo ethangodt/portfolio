@@ -16,8 +16,8 @@ window.router = new Router(
       new Card(about, "#b5b5b5"),
     ]),
     "/engineering": getRoute("devSection", "engineering", "#7a88d0", [
-      new Card(about, "#b77272"),
-      new Card(plantMW, "#4232c7"),
+      new Card(plantMW, "#b77272"),
+      new Card(about, "#4232c7"),
       new Card(songlink, "red"),
     ]),
   },
