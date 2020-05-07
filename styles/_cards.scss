@@ -9,7 +9,7 @@
   box-shadow: 0px -2px 4px rgba(50, 50, 50, 0.1);
   position: relative;
   top: 0;
-  border-radius: 10px;
+  border-radius: 20px;
   overflow: hidden;
 
   img {
@@ -34,11 +34,18 @@
   }
 
   p:first-of-type {
-    margin-top: 9%;
+    margin-top: 9% !important;
   }
 
   p:last-of-type {
-    margin-bottom: 9%;
+    margin-bottom: 9% !important;
+  }
+}
+
+.card.negative {
+	background-color: #383838;
+  p {
+    color: white;
   }
 }
 

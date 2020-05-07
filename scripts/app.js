@@ -5,7 +5,12 @@ import Title from "./Title";
 import about from "./cards/views/about.html";
 import songlink from "./cards/views/songlink.html";
 import plantMW from "./cards/views/plant-midwest.html";
-import "./mobileNav" // fix this later
+import p2p from "./cards/views/p2p.html";
+import gifting from "./cards/views/gifting.html";
+import jaws from "./cards/views/jaws.html";
+import crossfit from "./cards/views/crossfit.html";
+import ekk from "./cards/views/ekk.html";
+import "./mobileNav"; // fix this later
 
 const APP_CONTAINER = document.querySelector("#APP");
 
@@ -15,10 +20,18 @@ window.router = new Router(
     "/about": getRoute("aboutSection", "about", "#2d2d2d", [
       new Card(about, "#b5b5b5"),
     ]),
-    "/engineering": getRoute("devSection", "engineering", "#7a88d0", [
-      new Card(plantMW, "#b77272"),
-      new Card(about, "#4232c7"),
+    "/paypal": getRoute("bla", "paypal", "#0070ba", [
+      new Card(p2p, "#dcd9f5"),
+      new Card(gifting, "#bb8be6"),
+      new Card(jaws, "red"),
+    ]),
+    "/misc": getRoute("sldjf", "side projects", "#7a88d0", [
       new Card(songlink, "red"),
+    ]),
+    "/design": getRoute("lsdjf", "design", "#7a88d0", [
+      new Card(plantMW, "#4232c7"),
+      new Card(crossfit, "#b77272"),
+      new Card(ekk, "red"),
     ]),
   },
   APP_CONTAINER

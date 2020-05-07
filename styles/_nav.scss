@@ -1,153 +1,164 @@
 // BREAKPOINT DEPENDENT STYLES AT BOTTOM
-nav	{
-	background-color: white;
-	text-align: center;
-	position: fixed;
-	will-change: transform;
+nav {
+  background-color: white;
+  text-align: center;
+  position: fixed;
+  will-change: transform;
 
-	h1 {
-		font-family: 'ubuntu', sans-serif;
-		font-size: 20px;
-		color: $textGrey;
-		margin-top: 50px;
-		margin-bottom: 60px;
+  h1 {
+    font-family: "ubuntu", sans-serif;
+    font-size: 20px;
+    color: $textGrey;
+    margin-top: 50px;
+    margin-bottom: 60px;
 
-		span {
-			display: block;
-			margin-top: 15px;
-			font-size: .6em;
-			color: #a1a1a1;
-		}
-	}
+    span {
+      display: block;
+      margin-top: 15px;
+      font-size: 0.6em;
+      color: #a1a1a1;
+    }
+  }
 
-	#navIcon {
-		display: none;
-		position: absolute;
-		height: 18px;
-		top: 19px;
-		right: 10px;
-		cursor: pointer;
+  #navIcon {
+    display: none;
+    position: absolute;
+    height: 18px;
+    top: 19px;
+    right: 10px;
+    cursor: pointer;
 
-		.navIconFill {
-			fill: #757773;
-		}
+    .navIconFill {
+      fill: #757773;
+    }
+  }
 
-	}
+  p {
+    margin: 0 30px 60px 30px;
+  }
 
-	p {
-		margin: 0 30px 60px 30px;
-	}
+  ul {
+    height: auto;
+  }
 
-	ul {
-		height: auto;
-	}
+  li {
+    transform-style: preserve-3d;
+    font-family: "ubuntu", sans-serif;
+    color: $textGrey;
+    letter-spacing: 2px;
+    transition: all 250ms ease;
+    max-height: 59px;
+    display: block;
+    cursor: pointer;
+    span {
+      display: block;
+      font-size: 10px;
+      margin-top: -10px;
+      margin-bottom: 5px;
+    }
+  }
 
-	li {
-		transform-style: preserve-3d;
-		font-family: "ubuntu", sans-serif;
-		color: $textGrey;
-		letter-spacing: 2px;
-		transition: all 250ms ease;
-		max-height: 59px;
-		display: block;
-		cursor: pointer;
-	}
+  li > div {
+    height: 15px;
+    padding: 22px 0;
+    width: 100%;
+    cursor: pointer;
+  }
 
-	li > div {
-		height: 15px;
-		padding: 22px 0;
-		width: 100%;
-		cursor: pointer;
-	}
+  li div.default {
+    transition: background-color 250ms ease;
+    background-color: white;
+    @include transform(translateZ(29.5px));
+    span {
+      color: grey;
+    }
+  }
 
-	li div.default {
-		transition: background-color 250ms ease;
-		background-color: white;
-		@include transform(translateZ(29.5px));
-	}
-
-	li div.active {
-		@include transform(rotateX(90deg) translateZ(88.5px));
-		background-color: $textGrey;
-		color: white;
-	}
+  li div.active {
+    @include transform(rotateX(90deg) translateZ(88.5px));
+    background-color: $textGrey;
+    color: white;
+    span {
+      color: white;
+    }
+  }
 }
 
 .hoverEnabled nav div.default:hover {
-	background-color: #8f8a8a;
+  background-color: #8f8a8a;
 }
 
 .hoverEnabled nav li:hover {
-	@include transform(rotateX(-89deg));
+  @include transform(rotateX(-89deg));
 }
 
 // BREAKPOINT DEPENDENT STYLES
 // large
-@media ($largeBreakRule)  {
-	nav {
-		height: 100%;
-		width: 275px;
-		padding: 30px 0;
-	}
+@media ($largeBreakRule) {
+  nav {
+    height: 100%;
+    width: 275px;
+    padding: 30px 0;
+  }
 }
 
 // medium
-@media ($medBreakRule)  {
-	nav {
-		height: 100%;
-		width: 150px;
-		padding: 30px 0;
+@media ($medBreakRule) {
+  nav {
+    height: 100%;
+    width: 150px;
+    padding: 30px 0;
 
-		h1 {
-			font-size: .9em;
-		 }
+    h1 {
+      font-size: 0.9em;
+    }
 
-		p {
-			display: none;
-		}
+    p {
+      display: none;
+    }
 
-		ul {
-			height: 236px;
-		}
-	}
+    ul {
+      height: 236px;
+    }
+  }
 }
 
 // small
 @media ($smallBreakRule) {
-	nav {
-		display: block;
-		position: fixed;
-		top: 0;
-		height: 25px;
-		width: 100%;
-		padding: 15px 0;
-		z-index: 100;
+  nav {
+    display: block;
+    position: fixed;
+    top: 0;
+    height: 25px;
+    width: 100%;
+    padding: 15px 0;
+    z-index: 100;
 
-		h1 {
-			margin-top: 0;
-			margin-bottom: 0;
+    h1 {
+      margin-top: 0;
+      margin-bottom: 0;
 
-			span {
-				margin-top: 3px;
-			}
-		}
+      span {
+        margin-top: 3px;
+      }
+    }
 
-		#navIcon {
-			display: inherit;
-		}
+    #navIcon {
+      display: inherit;
+    }
 
-		ul {
-			margin-top: 13px;
-			overflow: hidden;
-			height: 0;
-		}
+    ul {
+      margin-top: 13px;
+      overflow: hidden;
+      height: 0;
+    }
 
-		ul.mobileMenuTransition {
-			transition: height 250ms ease;
-		}
+    ul.mobileMenuTransition {
+      transition: height 250ms ease;
+    }
 
-		li div.default{
-			background-color: #e7e7e7;
-		}
-	}
+    li div.default {
+      background-color: #e7e7e7;
+    }
+  }
 }
