@@ -10,7 +10,7 @@ import gifting from "./cards/views/gifting.html";
 import jaws from "./cards/views/jaws.html";
 import crossfit from "./cards/views/crossfit.html";
 import ekk from "./cards/views/ekk.html";
-// import "./mobileNav"; // fix this later
+import "./mobileNav"; // fix this later
 
 const APP_CONTAINER = document.querySelector("#APP");
 
@@ -36,6 +36,13 @@ window.router = new Router(
   },
   APP_CONTAINER
 );
+
+function hackyTobacky(path) {
+  // in case my router is running on github pages....
+  return window.location.pathname.includes("portfolio")
+    ? `/portfolio${path}`
+    : path;
+}
 
 function getRoute(id, titleString, color, cards) {
   const sectionBackgroundEl = document.createElement("div");

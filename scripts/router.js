@@ -17,7 +17,7 @@ export default class Router {
     }
   }
   to(path) {
-    const currentPath = window.location.pathname;
+    const currentPath = this._getPath(window.location.pathname);
     const isSamePath = currentPath === path;
     if (this._isRouting || isSamePath) {
       // throttle if we're already routing,
@@ -29,7 +29,7 @@ export default class Router {
     if (!isRouteSupported) {
       return this.to(this._fallbackRoute);
     }
-    window.history.pushState(null, null, path);
+    window.history.pushState(null, null, this._makePath(path));
     Promise.resolve()
       .then(() => {
         if (this.routes[currentPath]) {
@@ -43,7 +43,7 @@ export default class Router {
   _unMountRoute(path) {
     const route = this.routes[path];
     return route.willUnmount().then(() => {
-      this.targetEl.removeChild(route.renderable)
+      this.targetEl.removeChild(route.renderable);
     });
   }
   _mountRoute(path) {
@@ -65,13 +65,21 @@ export default class Router {
   //   event();
   // }
   _setInitialRoute() {
-    const {
-      location: { pathname: initialPath },
-    } = window;
+    const initialPath = this._getPath(window.location.pathname);
     if (this.routes[initialPath]) {
       this._mountRoute(initialPath);
     } else {
       this.to(this._fallbackRoute);
     }
+  }
+  _getPath() {
+    const isGithub = window.location.pathname.includes("portfolio");
+    return isGithub
+      ? window.location.pathname.replace("/portfolio", "")
+      : window.location.pathname;
+  }
+  _makePath(path) {
+    const isGithub = window.location.pathname.includes("portfolio");
+    return isGithub ? `/portfolio${path}` : path;
   }
 }
