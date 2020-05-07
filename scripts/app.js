@@ -10,7 +10,7 @@ import gifting from "./cards/views/gifting.html";
 import jaws from "./cards/views/jaws.html";
 import crossfit from "./cards/views/crossfit.html";
 import ekk from "./cards/views/ekk.html";
-import "./mobileNav"; // fix this later
+// import "./mobileNav"; // fix this later
 
 const APP_CONTAINER = document.querySelector("#APP");
 
