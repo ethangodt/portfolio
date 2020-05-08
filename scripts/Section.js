@@ -68,6 +68,14 @@ Section.prototype.animateIn = function animateIn() {
             new Promise((resolve, reject) => {
               setTimeout(() => {
                 card.animateIn();
+                // This is annoying, and there might be a better way, but it's because
+                // the images take some time to load/render. When I initially set the html
+                // views the images aren't there and so the height ends up being way too short
+                // and you can't scroll through everything. You don't notice it locally, because
+                // all images load fast. Resetting every little bit while the section is animating in
+                // should prevent the issue. Ideally I couldn't be certain that they've loaded
+                // with some sort of loading event, but that's too much work for right now.
+                this._setMainWrapperHeight();
               }, 500 * (this.cards.length - 1 - i));
             })
         )
