@@ -5,12 +5,15 @@ export const delay = (wait) =>
     }, wait);
   });
 
-// hacky tobacky
-export const endlessly = (fn, interval) => {
+export const hackyTobacky = (fn, interval, times) => {
+  let count = 0;
   function loop() {
+    count++;
     fn();
     setTimeout(() => {
-      loop();
+      if (count < times) {
+        loop();
+      }
     }, interval);
   }
   loop();
