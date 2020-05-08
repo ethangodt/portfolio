@@ -9,8 +9,8 @@ export default function Section(id, title, cards, backgroundEl, color) {
   `;
   // TODO get rid of id and custom event
   const event = new CustomEvent(id + "Scroll");
-  backgroundEl.style.background = `linear-gradient(142deg, ${color}, transparent)`
-  backgroundEl.style.backgroundColor = cards[0].backgroundColor
+  backgroundEl.style.background = `linear-gradient(142deg, ${color}, transparent)`;
+  backgroundEl.style.backgroundColor = cards[0].backgroundColor;
   this.backgroundEl = backgroundEl;
   this.cardMargin = 100; // check _cards.scss ....
   this.currentScrollZone = 0;
@@ -68,7 +68,7 @@ Section.prototype.animateIn = function animateIn() {
             new Promise((resolve, reject) => {
               setTimeout(() => {
                 card.animateIn();
-              }, 300 * i);
+              }, 500 * (this.cards.length - 1 - i));
             })
         )
       );
@@ -130,7 +130,9 @@ Section.prototype._shiftCardDepths = function _shiftCardDepths(scrollVal) {
   let depthHasUpdated = currentScrollZone !== this.currentScrollZone;
   let almostUpdated = percentageCompleteWithZone > 0.8;
   if (depthHasUpdated) {
-    this.backgroundEl.style.backgroundColor = this.cards[currentScrollZone].backgroundColor
+    this.backgroundEl.style.backgroundColor = this.cards[
+      currentScrollZone
+    ].backgroundColor;
   }
   if (depthHasUpdated || almostUpdated) {
     this.currentScrollZone = currentScrollZone;
