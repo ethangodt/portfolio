@@ -1,5 +1,5 @@
 import { htmlToElement } from "./html";
-import { delay } from "./utils";
+import { delay, hackyTobacky } from "./utils";
 
 // TODO reset the width when the window resizes
 
@@ -60,7 +60,15 @@ Section.prototype.animateIn = function animateIn() {
       window.scrollTo(0, 0);
       this.wrapper.classList.remove("inactive");
       this.backgroundEl.classList.remove("inactive");
-      this._setMainWrapperHeight();
+      hackyTobacky(
+        () => {
+          window.requestAnimationFrame(() => {
+            this._setMainWrapperHeight();
+          });
+        },
+        1000,
+        2
+      );
       this._setCardWidths();
       return Promise.all(
         this.cards.map(
@@ -68,14 +76,7 @@ Section.prototype.animateIn = function animateIn() {
             new Promise((resolve, reject) => {
               setTimeout(() => {
                 card.animateIn();
-                // This is annoying, and there might be a better way, but it's because
-                // the images take some time to load/render. When I initially set the html
-                // views the images aren't there and so the height ends up being way too short
-                // and you can't scroll through everything. You don't notice it locally, because
-                // all images load fast. Resetting every little bit while the section is animating in
-                // should prevent the issue. Ideally I couldn't be certain that they've loaded
-                // with some sort of loading event, but that's too much work for right now.
-                this._setMainWrapperHeight();
+                resolve();
               }, 500 * (this.cards.length - 1 - i));
             })
         )
