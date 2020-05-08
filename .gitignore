@@ -2,6 +2,7 @@
 psds/
 screenshots
 node_modules/
+prod/
 
 # Parcel Stuff
 dist/
