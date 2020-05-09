@@ -4,8 +4,6 @@
     // setup navIcon
     var menuIcon = document.querySelector("nav svg"),
         buttonContainer = document.querySelector("#buttonContainer");
-    console.log(menuIcon);
-
     menuIcon.addEventListener("click", function () {
         // if it's already open, close it
         if (buttonContainer.style.height === "236px") {

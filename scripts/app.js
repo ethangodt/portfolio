@@ -1,3 +1,4 @@
+import "./init";
 import Router from "./router";
 import Section from "./Section";
 import Card from "./cards/card";
@@ -10,7 +11,7 @@ import gifting from "./cards/views/gifting.html";
 import jaws from "./cards/views/jaws.html";
 import crossfit from "./cards/views/crossfit.html";
 import ekk from "./cards/views/ekk.html";
-import "./mobileNav"; // fix this later
+import "./mobileNav"; // refactor this later
 
 const APP_CONTAINER = document.querySelector("#APP");
 

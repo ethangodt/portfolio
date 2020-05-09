@@ -10,7 +10,6 @@ Card.prototype.renderable = function render() {
 };
 
 Card.prototype.animateIn = function animateIn() {
-  console.log(this.el.classList);
   this.el.classList.remove("unloaded");
 };
 
@@ -42,9 +41,9 @@ Card.prototype.shiftDepth = function shiftDepth(
     if (depth === 0) {
       // you're being viewed, and you don't
       // need extra styles — remove them if you had them
-      this.el.style[style] = null;
+      this.el.raf(style, null);
     } else {
-      this.el.style[style] = newStyle[style];
+      this.el.raf(style, newStyle[style]);
     }
   }
 };
@@ -57,7 +56,7 @@ Card.prototype.getHeight = function getHeight() {
 };
 
 Card.prototype.setWidth = function setWidth(width) {
-  this.el.style.width = width;
+  this.el.raf("width", width);
 };
 
 function easeInOutCubic(x) {

@@ -3,7 +3,6 @@ import Title from './Title'
 import Section from './Section'
 
 export default function sectionFactory (id) {
-	console.log('testing');
 	var container, content, title;
 
 	container = document.querySelector("#" + id);

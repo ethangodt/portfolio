@@ -1,17 +1,19 @@
 import { htmlToElement } from "./html";
 import { delay, hackyTobacky } from "./utils";
 
-// TODO reset the width when the window resizes
-
 export default function Section(id, title, cards, backgroundEl, color) {
   const template = `
     <div class="sectionContainer inactive"></div>
   `;
   // TODO get rid of id and custom event
   const event = new CustomEvent(id + "Scroll");
-  backgroundEl.style.background = `linear-gradient(142deg, ${color}, transparent)`;
-  backgroundEl.style.backgroundColor = cards[0].backgroundColor;
+  backgroundEl.raf(
+    "background",
+    `linear-gradient(142deg, ${color}, transparent)`
+  );
+  backgroundEl.raf("background-color", cards[0].backgroundColor);
   this.backgroundEl = backgroundEl;
+  this.title = title;
   this.cardMargin = 100; // check _cards.scss ....
   this.currentScrollZone = 0;
   this.active = false; // currently visible in the view
@@ -38,7 +40,9 @@ export default function Section(id, title, cards, backgroundEl, color) {
     if (throttleScrollEffects) {
       return;
     } else {
-      this._shiftCardDepths(window.scrollY);
+      const { scrollY } = window;
+      this.title.animate(scrollY);
+      this._shiftCardDepths(scrollY);
       throttleScrollEffects = true;
       setTimeout(() => {
         throttleScrollEffects = false;
@@ -62,9 +66,7 @@ Section.prototype.animateIn = function animateIn() {
       this.backgroundEl.classList.remove("inactive");
       hackyTobacky(
         () => {
-          window.requestAnimationFrame(() => {
-            this._setMainWrapperHeight();
-          });
+          this._setMainWrapperHeight();
         },
         1000,
         2
@@ -113,7 +115,7 @@ Section.prototype._setMainWrapperHeight = function setMainWrapperHeight() {
     let cardAndMargin = card.getHeight() + this.cardMargin;
     newHeight += cardAndMargin;
   });
-  this.appWrapper.style.height = newHeight + "px";
+  this.appWrapper.raf("height", `${newHeight}px`);
 };
 
 Section.prototype._shiftCardDepths = function _shiftCardDepths(scrollVal) {
@@ -139,9 +141,10 @@ Section.prototype._shiftCardDepths = function _shiftCardDepths(scrollVal) {
   let depthHasUpdated = currentScrollZone !== this.currentScrollZone;
   let almostUpdated = percentageCompleteWithZone > 0.8;
   if (depthHasUpdated) {
-    this.backgroundEl.style.backgroundColor = this.cards[
-      currentScrollZone
-    ].backgroundColor;
+    this.backgroundEl.raf(
+      "background-color",
+      this.cards[currentScrollZone].backgroundColor
+    );
   }
   if (depthHasUpdated || almostUpdated) {
     this.currentScrollZone = currentScrollZone;
