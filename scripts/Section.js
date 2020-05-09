@@ -12,7 +12,7 @@ export default function Section(title, cards, backgroundEl, color) {
   backgroundEl.raf("background-color", cards[0].backgroundColor);
   this.backgroundEl = backgroundEl;
   this.title = title;
-  this.cardMargin = 100; // check _cards.scss ....
+  this.cardMargin = 100; // check _cards.scss .... there should be a better way to do this
   this.currentScrollZone = 0;
   this.active = false; // currently visible in the view
   this.appWrapper = document.querySelector(".main-wrapper");

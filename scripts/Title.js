@@ -7,6 +7,14 @@ export default function Title(title) {
     </div>
 	`;
   this.el = htmlToElement(template);
+  setInterval(() => {
+    // Hackzilla, but it's because sometimes the scroll events aren't granular enough,
+    // and the title stays faded out.
+    // https://stackoverflow.com/questions/37803141/jquery-onscroll-skips-values-when-hard-scroll
+    // This is happening whether or not the title is even visible, but
+    // I don't think I care at the moment.
+    this.animate(window.scrollY);
+  }, 500);
 }
 
 Title.prototype.renderable = function renderable() {
