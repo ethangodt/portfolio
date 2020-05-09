@@ -1,6 +1,6 @@
 import { htmlToElement } from "./html";
 
-export default function Title(id, title) {
+export default function Title(title) {
   const template = `
 	  <div class="titleContainer">
       <h2>${title.toUpperCase()}</h2>

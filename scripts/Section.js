@@ -1,12 +1,10 @@
 import { htmlToElement } from "./html";
 import { delay, hackyTobacky } from "./utils";
 
-export default function Section(id, title, cards, backgroundEl, color) {
+export default function Section(title, cards, backgroundEl, color) {
   const template = `
     <div class="sectionContainer inactive"></div>
   `;
-  // TODO get rid of id and custom event
-  const event = new CustomEvent(id + "Scroll");
   backgroundEl.raf(
     "background",
     `linear-gradient(142deg, ${color}, transparent)`
@@ -37,9 +35,7 @@ export default function Section(id, title, cards, backgroundEl, color) {
     if (!this.active) {
       return;
     }
-    if (throttleScrollEffects) {
-      return;
-    } else {
+    if (!throttleScrollEffects) {
       const { scrollY } = window;
       this.title.animate(scrollY);
       this._shiftCardDepths(scrollY);
@@ -48,7 +44,6 @@ export default function Section(id, title, cards, backgroundEl, color) {
         throttleScrollEffects = false;
       }, 30);
     }
-    window.dispatchEvent(event);
   });
 }
 

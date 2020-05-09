@@ -18,18 +18,14 @@ const APP_CONTAINER = document.querySelector("#APP");
 window.router = new Router(
   {
     fallback: "/about",
-    "/about": getRoute("aboutSection", "about", "#2d2d2d", [
-      new Card(about, "#b5b5b5"),
-    ]),
-    "/paypal": getRoute("bla", "paypal", "#0070ba", [
+    "/about": getRoute("about", "#2d2d2d", [new Card(about, "#b5b5b5")]),
+    "/paypal": getRoute("paypal", "#0070ba", [
       new Card(p2p, "#dcd9f5"),
       new Card(gifting, "#bb8be6"),
       new Card(jaws, "red"),
     ]),
-    "/misc": getRoute("sldjf", "side projects", "#7a88d0", [
-      new Card(songlink, "red"),
-    ]),
-    "/design": getRoute("lsdjf", "design", "#7a88d0", [
+    "/misc": getRoute("side projects", "#7a88d0", [new Card(songlink, "red")]),
+    "/design": getRoute("design", "#7a88d0", [
       new Card(plantMW, "#4232c7"),
       new Card(crossfit, "#b77272"),
       new Card(ekk, "red"),
@@ -45,12 +41,12 @@ function hackyTobacky(path) {
     : path;
 }
 
-function getRoute(id, titleString, color, cards) {
+function getRoute(titleString, color, cards) {
   const sectionBackgroundEl = document.createElement("div");
   sectionBackgroundEl.classList.add("section-bg-gradient", "inactive");
   APP_CONTAINER.appendChild(sectionBackgroundEl);
-  const title = new Title(id, titleString);
-  const section = new Section(id, title, cards, sectionBackgroundEl, color);
+  const title = new Title(titleString);
+  const section = new Section(title, cards, sectionBackgroundEl, color);
   return {
     renderable: section.renderable(),
     didMount: () => Promise.resolve().then(() => section.animateIn()),
