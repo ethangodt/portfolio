@@ -34,16 +34,20 @@
   }
 
   p:first-of-type {
-    margin-top: 9% !important;
+    margin-top: 7% !important;
   }
 
   p:last-of-type {
-    margin-bottom: 9% !important;
+    margin-bottom: 7% !important;
+  }
+
+  .browser-screenshot-wrapper {
+    padding-top: 15px;
   }
 }
 
 .card.negative {
-	background-color: #383838;
+  background-color: #383838;
   p {
     color: white;
   }
